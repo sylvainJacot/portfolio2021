@@ -6,8 +6,10 @@ const colors = {
     //----Neutral
 
     // Black : "#000000",
-    DarkGrey : "#1b273d",
-    DarkGrey2 : "#7D7D7D",
+    DarkGrey : "#202a3d",
+    DarkGrey2 : "#171e2b",
+
+    // DarkGrey2 : "#7D7D7D",
     // LightGrey : "#C5C5C5",
     // LightGrey2 : "#e8e8e8",
     White : "#FFFFFF",
@@ -31,6 +33,7 @@ export const colorsRoles = {
     White : colors.White,
     DarkGrey: colors.DarkGrey,
     DarkGrey2: colors.DarkGrey2,
+    // DarkGrey2: colors.DarkGrey2,
     // LightGrey : colors.LightGrey,
     // LightGrey2: colors.LightGrey2,
     // Black: colors.Black,
@@ -67,5 +70,11 @@ export const gradients = {
     -webkit-background-image: linear-gradient(-45deg, ${colorsRoles.DarkGrey} 0%, ${colorsRoles.DarkGrey2} 100%); opacity: 50%;
     -moz-background-image: linear-gradient(-45deg, ${colorsRoles.DarkGrey} 0%, ${colorsRoles.DarkGrey2} 100%); opacity: 50%;
     -o-background-image: linear-gradient(-45deg, ${colorsRoles.DarkGrey} 0%, ${colorsRoles.DarkGrey2} 100%); opacity: 50%;
+    `,
+    RadialBg1 : `
+    background-image: radial-gradient(closest-side, ${colors.White} 0%, rgba(255,255,255,0.00) 100%); opacity 30%;
+    -webkit-background-image: radial-gradient(closest-side, ${colors.White} 0%, rgba(255,255,255,0.00) 100%); opacity 30%;
+    -moz-background-image: radial-gradient(closest-side, ${colors.White} 0%, rgba(255,255,255,0.00) 100%); opacity 30%;
+    -o-background-image: radial-gradient(closest-side, ${colors.White} 0%, rgba(255,255,255,0.00) 100%); opacity 30%;
     `,
 }

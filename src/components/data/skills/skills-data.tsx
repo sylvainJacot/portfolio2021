@@ -13,7 +13,8 @@ export const skills = [
         SkillHeroImg : Parrot,
         SkillColor : colorsRoles.uiCol,
         SkillLightCtaLabel : false,
-        SkillGradient : gradients.uiCol
+        SkillGradient : gradients.uiCol,
+        SkillCtaLabel : "Let's draw !"
     },
     {
         SkillTitle : "Frontend developer",
@@ -21,7 +22,8 @@ export const skills = [
         SkillHeroImg : Fox,
         SkillColor : colorsRoles.frontCol,
         SkillLightCtaLabel : true,
-        SkillGradient : gradients.frontCol
+        SkillGradient : gradients.frontCol,
+        SkillCtaLabel : "Dacodac !"
     },
     {
         SkillTitle : "Photo retoucher",
@@ -29,6 +31,7 @@ export const skills = [
         SkillHeroImg : Horse,
         SkillColor : colorsRoles.retouchCol,
         SkillLightCtaLabel : true,
-        SkillGradient : gradients.retouchCol
+        SkillGradient : gradients.retouchCol,
+        SkillCtaLabel : "What a beauty !"
     }
 ]

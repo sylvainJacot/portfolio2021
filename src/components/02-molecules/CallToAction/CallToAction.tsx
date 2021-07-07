@@ -1,6 +1,8 @@
 import { FC, useRef } from "react";
 import styled from "styled-components";
 import { colorsRoles } from "../../01-atoms/colors";
+import { fontsFamilies } from "../../01-atoms/GlobalStyle";
+import { media } from "../../01-atoms/mediaqueries/MediaQueries";
 
 
 type IProps = {
@@ -12,13 +14,22 @@ type IProps = {
 export const Wrapper = styled.a<IProps>`
   position: relative;
   display: inline-block;
-  padding: 1rem 2.5rem;
+  padding: 1rem 1rem;
   background-color: ${(props) => props.background};
   border-radius: 0.5rem;
   color: ${(props) =>
-    props.LightText ? colorsRoles.White : colorsRoles.DarkGrey};
+  props.LightText ? colorsRoles.White : colorsRoles.DarkGrey};
   width: fit-content;
   overflow: hidden;
+  font-family: ${fontsFamilies.poppinsSemiBold};
+  font-size: 0.8rem;
+  letter-spacing: 0.1rem;
+  z-index: 1;
+
+    ${media.sm`
+      font-size: 1rem;
+      padding: 1rem 1.5rem;
+    `}
 
   `
 

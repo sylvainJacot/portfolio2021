@@ -13,7 +13,7 @@ export const Header = styled.header`
 display: flex;
 justify-content: space-between;
 padding: 1rem calc((100vw - 75.625vw) / 2);
-background-color: ${colorsRoles.DarkGrey};
+background-color: ${colorsRoles.DarkGrey2};
 
 ${media.md`
     position: fixed;

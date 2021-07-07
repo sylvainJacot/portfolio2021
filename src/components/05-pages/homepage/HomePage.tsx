@@ -23,6 +23,8 @@ const HomePage = () => {
                     SubTitle={skill.SkillQuote}
                     Color={skill.SkillColor}
                     LightText={skill.SkillLightCtaLabel}
+                    gradient={skill.SkillGradient}
+                    label={skill.SkillCtaLabel}
                     />
                 )
             }

@@ -1,5 +1,16 @@
 import { createGlobalStyle } from 'styled-components';
 
+import PoppinsRegularWoff from "../assets/fonts/Poppins-Regular.woff";
+import PoppinsRegularWoff2 from "../assets/fonts/Poppins-Regular.woff2";
+import PoppinsSemiBoldWoff from "../assets/fonts/Poppins-SemiBold.woff";
+import PoppinsSemiBoldWoff2 from "../assets/fonts/Poppins-SemiBold.woff2";
+import PoppinsBoldWoff from "../assets/fonts/Poppins-Bold.woff";
+import PoppinsBoldWoff2 from "../assets/fonts/Poppins-Bold.woff2";
+import PoppinsExtraBoldWoff from "../assets/fonts/Poppins-ExtraBold.woff";
+import PoppinsExtraBoldWoff2 from "../assets/fonts/Poppins-ExtraBold.woff2";
+import PoppinsBlackWoff from "../assets/fonts/Poppins-Black.woff";
+import PoppinsBlackWoff2 from "../assets/fonts/Poppins-Black.woff2";
+
 
 const GlobalStyle = createGlobalStyle`
 *,
@@ -49,7 +60,63 @@ const GlobalStyle = createGlobalStyle`
     cursor: pointer;
   }
 
-  
+  @font-face {
+    font-family: 'Poppins, sans-serif';
+      src: 
+      url('${PoppinsRegularWoff}') format('woff'),
+      url('${PoppinsRegularWoff2}') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Poppins Bold, sans-serif';
+      src: 
+      url('${PoppinsBoldWoff}') format('woff'),
+      url('${PoppinsBoldWoff2}') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Poppins SemiBold, sans-serif';
+      src: 
+      url('${PoppinsSemiBoldWoff}') format('woff'),
+      url('${PoppinsSemiBoldWoff2}') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+  }
+  @font-face {
+    font-family: 'Poppins ExtraBold, sans-serif';
+      src: 
+      url('${PoppinsExtraBoldWoff}') format('woff'),
+      url('${PoppinsExtraBoldWoff2}') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+  }
+  @font-face {
+    font-family: 'Poppins Black, sans-serif';
+      src: 
+      url('${PoppinsBlackWoff}') format('woff'),
+      url('${PoppinsBlackWoff2}') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+  }
+
 `;
+
+export const fontsFamilies = {
+    poppinsRegular : "'Poppins, sans-serif'",
+    poppinsSemiBold : "'Poppins SemiBold, sans-serif'",
+    poppinsBold : "'Poppins Bold, sans-serif'",
+    poppinsExtraBold : "'Poppins ExtraBold, sans-serif'",
+    poppinsBlackBold : "'Poppins Black, sans-serif'"
+};
+
  
 export default GlobalStyle;
