@@ -1,11 +1,18 @@
+import { useContext } from "react";
 import styled from "styled-components";
-// import Grid from "../../01-atoms/layout/Grid";
+import { media } from "../../01-atoms/mediaqueries/MediaQueries";
 import HomeSkillNavItem from "../../03-organisms/HomeSkillNavItem/HomeSkillNavItem";
+import { GlobalContext } from "../../data/contexts/global/GlobalContext";
 import {skills} from "../../data/skills/skills-data";
 
 export const Wrapper = styled.ul`
 width: 100%;
 height: 100vh;
+
+${media.md`
+    display: flex;
+    width: calc(100% - 80px);
+`}
 
 `;
 

@@ -4,6 +4,7 @@ import CallToAction from "../../02-molecules/CallToAction/CallToAction";
 import { colorsRoles, gradients } from "../../01-atoms/colors";
 import { fontsFamilies } from "../../01-atoms/GlobalStyle";
 import { media } from "../../01-atoms/mediaqueries/MediaQueries";
+import { transitions } from "../../01-atoms/animations/transitions";
 
 type Props = {
   Titre: string;
@@ -12,16 +13,15 @@ type Props = {
   Color: string;
   LightText: boolean;
   gradient: string;
-  label: string
+  label: string;
 };
 
 type StyledWrapper = {
   gradient: string;
-}
+};
 type StyledContent = {
   Color: string;
-}
-
+};
 
 export const ContentWrapper = styled.div<StyledContent>`
   display: flex;
@@ -31,6 +31,10 @@ export const ContentWrapper = styled.div<StyledContent>`
 
   ${media.sm`
   padding-right: 16%;
+  `}
+  ${media.md`
+    padding: 0;
+    width: 100%;
   `}
 
   & > h1 {
@@ -48,7 +52,7 @@ export const ContentWrapper = styled.div<StyledContent>`
       bottom: -1rem;
       height: 0.1rem;
       width: 2.5rem;
-      background-color: ${props => props.Color};
+      background-color: ${(props) => props.Color};
     }
   }
   & > p {
@@ -56,8 +60,22 @@ export const ContentWrapper = styled.div<StyledContent>`
     color: ${colorsRoles.White};
     font-size: 1rem;
     margin: 2rem 0;
-  }
 
+    ${media.md`
+      position: absolute;
+      opacity: 0;
+      transform-origin: bottom center;
+      transform: translateY(1.5rem) scaleY(0.7);
+    `}
+  }
+  & > a {
+    ${media.md`
+      position: absolute;
+      opacity: 0;
+      transform-origin: bottom center;
+      transform: translateY(1.5rem) scaleY(1);
+    `}
+  }
 `;
 export const Picture = styled.img`
   position: absolute;
@@ -70,9 +88,12 @@ export const Picture = styled.img`
     width: 24rem;
     left: 8rem;
     bottom: -26rem;
-  
   `}
-
+  ${media.md`
+    width: 24rem;
+    left: 50%;
+    bottom: -24vh;
+  `}
 `;
 
 export const Wrapper = styled.li<StyledWrapper>`
@@ -84,8 +105,45 @@ export const Wrapper = styled.li<StyledWrapper>`
   display: flex;
   justify-content: flex-end;
 
+  &:not(:first-child) {
+    ${Picture} {
+      transform: translate(-50%, -50%) scaleX(-1);
+    }
+  }
+
   ${media.sm`
   padding: 6rem 2rem;
+  `}
+  ${media.md`
+    padding: 6rem 4rem;
+    ${Picture} {
+      transition: ${transitions.easeOut3ms};
+    }
+
+    &:not(:first-child) {
+    ${Picture} {
+      transform: translate(-50%, -50%) scaleX(1);
+      }
+    }
+    &:hover {
+      ${Picture} {
+      transform: translate(-50%, -8%) scale(1.5);
+      transition: ${transitions.easeOut4ms};
+      }
+       p {
+        position: relative;
+        opacity: 1;
+        transform: translateY(0) scaleY(1);
+        transition: ${transitions.easeOut3ms};
+      }
+      a {
+        position: relative;
+        opacity: 1;
+        transform: translateY(0) scaleY(1);
+        transition: ${transitions.easeOut3ms};
+      }
+
+  }
   `}
 
   &:after {
@@ -96,7 +154,7 @@ export const Wrapper = styled.li<StyledWrapper>`
     right: 0;
     bottom: 0;
     height: 32%;
-    ${props => props.gradient}
+    ${(props) => props.gradient}
     opacity: 0.2;
   }
   &:before {
@@ -107,16 +165,11 @@ export const Wrapper = styled.li<StyledWrapper>`
     left: 50%;
     top: 0;
     height: 100%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     ${gradients.RadialBg1}
     opacity: 0.2;
   }
-
-  &:not(:first-child) {
-    ${Picture} {
-      transform: translate(-50%, -50%) scaleX(-1);
-    }
-  }
+  
 `;
 
 const HomeSkillNavItem: FC<Props> = ({
@@ -126,7 +179,7 @@ const HomeSkillNavItem: FC<Props> = ({
   Color,
   LightText,
   gradient,
-  label
+  label,
 }) => {
   return (
     <>

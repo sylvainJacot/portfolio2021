@@ -14,6 +14,7 @@ display: flex;
 justify-content: space-between;
 padding: 1rem calc((100vw - 75.625vw) / 2);
 background-color: ${colorsRoles.DarkGrey2};
+z-index: 10;
 
 ${media.md`
     position: fixed;
