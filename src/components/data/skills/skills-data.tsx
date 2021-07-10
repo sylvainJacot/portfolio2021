@@ -14,7 +14,8 @@ export const skills = [
         SkillColor : colorsRoles.uiCol,
         SkillLightCtaLabel : false,
         SkillGradient : gradients.uiCol,
-        SkillCtaLabel : "Let's draw !"
+        SkillCtaLabel : "Let's draw !",
+        SkillRouterPath : "/uxui-designer"
     },
     {
         SkillTitle : "Frontend developer",
@@ -23,7 +24,8 @@ export const skills = [
         SkillColor : colorsRoles.frontCol,
         SkillLightCtaLabel : true,
         SkillGradient : gradients.frontCol,
-        SkillCtaLabel : "Dacodac !"
+        SkillCtaLabel : "Dacodac !",
+        SkillRouterPath : "/frontend-developer"
     },
     {
         SkillTitle : "Photo retoucher",
@@ -32,6 +34,7 @@ export const skills = [
         SkillColor : colorsRoles.retouchCol,
         SkillLightCtaLabel : true,
         SkillGradient : gradients.retouchCol,
-        SkillCtaLabel : "What a beauty !"
+        SkillCtaLabel : "What a beauty !",
+        SkillRouterPath : "/photo-retoucher"
     }
 ]

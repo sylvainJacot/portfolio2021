@@ -7,6 +7,7 @@ import JsLogo from "../../01-atoms/icons/JsLogo";
 import MenuButton from "../../02-molecules/MenuButton/MenuButton";
 import { media } from "../../01-atoms/mediaqueries/MediaQueries";
 import { GlobalContext } from "../../data/contexts/global/GlobalContext";
+import Socials from "./Socials";
 
 
 export const Header = styled.header`
@@ -60,8 +61,10 @@ const NavBar= () => {
                     FillColor={colorsRoles.White}
                     />
                 </LogoLink>
-
+                <Socials/>
                 <MenuButton/>
+
+
             </Header>
     </>
 

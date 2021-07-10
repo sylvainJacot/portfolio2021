@@ -1,8 +1,6 @@
-import { useContext } from "react";
 import styled from "styled-components";
 import { media } from "../../01-atoms/mediaqueries/MediaQueries";
 import HomeSkillNavItem from "../../03-organisms/HomeSkillNavItem/HomeSkillNavItem";
-import { GlobalContext } from "../../data/contexts/global/GlobalContext";
 import {skills} from "../../data/skills/skills-data";
 
 export const Wrapper = styled.ul`
@@ -32,6 +30,7 @@ const HomePage = () => {
                     LightText={skill.SkillLightCtaLabel}
                     gradient={skill.SkillGradient}
                     label={skill.SkillCtaLabel}
+                    pathName={skill.SkillRouterPath}
                     />
                 )
             }

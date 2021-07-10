@@ -14,6 +14,7 @@ type Props = {
   LightText: boolean;
   gradient: string;
   label: string;
+  pathName: string
 };
 
 type StyledWrapper = {
@@ -180,6 +181,7 @@ const HomeSkillNavItem: FC<Props> = ({
   LightText,
   gradient,
   label,
+  pathName
 }) => {
   return (
     <>
@@ -189,7 +191,7 @@ const HomeSkillNavItem: FC<Props> = ({
           <p>{SubTitle}</p>
           <CallToAction
             label={label}
-            href="#"
+            to={pathName}
             background={Color}
             LightText={LightText}
           />

@@ -1,4 +1,5 @@
 import { FC, useRef } from "react";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { colorsRoles } from "../../01-atoms/colors";
 import { fontsFamilies } from "../../01-atoms/GlobalStyle";
@@ -6,12 +7,11 @@ import { media } from "../../01-atoms/mediaqueries/MediaQueries";
 
 
 type IProps = {
-  href: string;
   background: string;
   LightText: boolean;
 };
 
-export const Wrapper = styled.a<IProps>`
+export const Wrapper = styled(NavLink)<IProps>`
   position: relative;
   display: inline-block;
   padding: 1rem 1rem;
@@ -55,7 +55,7 @@ export const Circle = styled.div`
 
 type CallToActionProps = {
   label: string;
-  href: string;
+  to: string;
   background: string;
   LightText: boolean;
 //   onClick : ()=>void;
@@ -63,7 +63,7 @@ type CallToActionProps = {
 
 const CallToAction: FC<CallToActionProps> = ({
   label,
-  href,
+  to,
   background,
   LightText,
 }) => {
@@ -88,7 +88,7 @@ const CallToAction: FC<CallToActionProps> = ({
 
   return (
     <>
-      <Wrapper ref={buttonRef} onClick={createRipple} href={href} background={background} LightText={LightText}>
+      <Wrapper ref={buttonRef} onClick={createRipple} to={to} background={background} LightText={LightText}>
         {label}
         {/* <Circle ref={circleRef}/> */}
       </Wrapper>
