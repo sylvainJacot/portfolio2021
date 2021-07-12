@@ -43,12 +43,15 @@ export const LogoLink = styled.a`
 const NavBar= () => {
 
     const HeaderRef = useRef<HTMLTextAreaElement>(null);
+    // const {navWidth, setNavWidth} = useContext(GlobalContext);
 
     useEffect(() => {
         if(HeaderRef.current) {
         // const NavBarHeight = HeaderRef.current.clientWidth;
         // console.log(NavBarHeight)
         }
+        // setNavWidth(5)
+        // console.log(navWidth);
     }, [])
 
     return <>
@@ -61,8 +64,8 @@ const NavBar= () => {
                     FillColor={colorsRoles.White}
                     />
                 </LogoLink>
-                <Socials/>
                 <MenuButton/>
+                <Socials/>
 
 
             </Header>

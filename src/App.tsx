@@ -2,7 +2,7 @@
 import GlobalStyle from './components/01-atoms/GlobalStyle';
 import HeadItem from './components/01-atoms/HeadItem';
 import NavBar from './components/03-organisms/NavBar/NavBar';
-import HomePage from './components/05-pages/homepage/HomePage';
+import GlobalProvider from './components/data/contexts/global/GlobalProvider';
 import Routes from './components/routes/routes';
 
 function App() {
@@ -17,11 +17,11 @@ function App() {
 
   return (
     <>
+      <GlobalProvider/>
       <GlobalStyle/>
       <HeadItem/>
       <NavBar/>
       <Routes/>
-
     </>
   );
 }

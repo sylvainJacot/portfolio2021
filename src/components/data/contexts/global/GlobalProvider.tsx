@@ -1,26 +1,13 @@
-import { FC, useState } from "react";
-import { GlobalContext } from "./GlobalContext";
+import { FC } from "react";
+import { GlobalContext, GlobalContexttDefaultValue } from "./GlobalContext";
 
 
-// type Props = {
-//     children : React.ReactNode;
-//     globalState :   ;
-// }
-
-type IGlobal = {
-    mainNavWidth: number
-  }
-
-const GlobalProvider:FC = ({children}) => {
-
-    const [globalState, setGlobalState] = useState<IGlobal>({
-        mainNavWidth : 123,
-      });
+const GlobalProvider:FC= ({children}) => {
 
     return <>
-
+        <GlobalContext.Provider value={GlobalContexttDefaultValue}>
             {children}
-
+        </GlobalContext.Provider>
         </>
 }
 
