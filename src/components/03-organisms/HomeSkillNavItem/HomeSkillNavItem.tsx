@@ -54,6 +54,7 @@ export const ContentWrapper = styled.div<StyledContent>`
       height: 0.1rem;
       width: 2.5rem;
       background-color: ${(props) => props.Color};
+      transition: ${transitions.easeOut4ms};
     }
   }
   & > p {
@@ -111,42 +112,6 @@ export const Wrapper = styled.li<StyledWrapper>`
       transform: translate(-50%, -50%) scaleX(-1);
     }
   }
-
-  ${media.sm`
-  padding: 6rem 2rem;
-  `}
-  ${media.md`
-    padding: 6rem 4rem;
-    ${Picture} {
-      transition: ${transitions.easeOut3ms};
-    }
-
-    &:not(:first-child) {
-    ${Picture} {
-      transform: translate(-50%, -50%) scaleX(1);
-      }
-    }
-    &:hover {
-      ${Picture} {
-      transform: translate(-50%, -8%) scale(1.5);
-      transition: ${transitions.easeOut4ms};
-      }
-       p {
-        position: relative;
-        opacity: 1;
-        transform: translateY(0) scaleY(1);
-        transition: ${transitions.easeOut3ms};
-      }
-      a {
-        position: relative;
-        opacity: 1;
-        transform: translateY(0) scaleY(1);
-        transition: ${transitions.easeOut3ms};
-      }
-
-  }
-  `}
-
   &:after {
     position: absolute;
     display: block;
@@ -170,6 +135,49 @@ export const Wrapper = styled.li<StyledWrapper>`
     ${gradients.RadialBg1}
     opacity: 0.2;
   }
+
+  ${media.sm`
+  padding: 6rem 2rem;
+  `}
+  ${media.md`
+    padding: 6rem 4rem;
+    ${Picture} {
+      transition: ${transitions.easeOut3ms};
+    }
+
+    &:not(:first-child) {
+    ${Picture} {
+      transform: translate(-50%, -50%) scaleX(1);
+      }
+    }
+    &:hover {
+      ${Picture} {
+      transform: translate(-50%, -8%) scale(1.5) rotate(3deg);
+      transition: ${transitions.easeOut4ms};
+      }
+       h1 {
+        &:after {
+          width: 5rem;
+          transition: ${transitions.easeOut4ms};
+        }
+      }
+       p {
+        position: relative;
+        opacity: 1;
+        transform: translateY(0) scaleY(1);
+        transition: ${transitions.easeOut3ms};
+      }
+      a {
+        position: relative;
+        opacity: 1;
+        transform: translateY(0) scaleY(1);
+        transition: ${transitions.easeOut3ms};
+      }
+
+  }
+  `}
+
+
   
 `;
 

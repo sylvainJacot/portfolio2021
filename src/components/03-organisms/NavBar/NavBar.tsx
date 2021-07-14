@@ -1,23 +1,20 @@
-import { useEffect, useRef, useContext, FC } from "react";
+import { useEffect, useRef } from "react";
 import styled from "styled-components";
-// import { Link } from "@reach/router";
-// import {Bounce} from "../../01-atoms/Animations/Animations";
 import { colorsRoles } from "../../01-atoms/colors";
 import JsLogo from "../../01-atoms/icons/JsLogo";
 import MenuButton from "../../02-molecules/MenuButton/MenuButton";
 import { media } from "../../01-atoms/mediaqueries/MediaQueries";
-import { GlobalContext } from "../../data/contexts/global/GlobalContext";
 import Socials from "./Socials";
-
+import { animations } from "../../01-atoms/animations/transitions";
 
 export const Header = styled.header`
-display: flex;
-justify-content: space-between;
-padding: 1rem calc((100vw - 75.625vw) / 2);
-background-color: ${colorsRoles.DarkGrey2};
-z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem calc((100vw - 75.625vw) / 2);
+  background-color: ${colorsRoles.DarkGrey2};
+  z-index: 10;
 
-${media.md`
+  ${media.md`
     position: fixed;
     right: 0;
     flex-direction : column;
@@ -25,13 +22,17 @@ ${media.md`
     height: 100vh;
     width: fit-content;
 `}
-
 `;
 
 export const LogoLink = styled.a`
-    ${media.md`
+  ${media.md`
         &:hover {
-
+            svg {
+                animation: ${animations.leftRotate} 0.6s ease-out forwards;
+                rect {
+                    animation: ${animations.bounceIn} 0.6s ease-out forwards;
+                }
+            }
         }
     `}
 `;
@@ -40,38 +41,34 @@ export const LogoLink = styled.a`
 //     ref: any
 // }
 
-const NavBar= () => {
+const NavBar = () => {
+  const HeaderRef = useRef<HTMLTextAreaElement>(null);
+  // const {navWidth, setNavWidth} = useContext(GlobalContext);
 
-    const HeaderRef = useRef<HTMLTextAreaElement>(null);
-    // const {navWidth, setNavWidth} = useContext(GlobalContext);
+  useEffect(() => {
+    if (HeaderRef.current) {
+      // const NavBarHeight = HeaderRef.current.clientWidth;
+      // console.log(NavBarHeight)
+    }
+    // setNavWidth(5)
+    // console.log(navWidth);
+  }, []);
 
-    useEffect(() => {
-        if(HeaderRef.current) {
-        // const NavBarHeight = HeaderRef.current.clientWidth;
-        // console.log(NavBarHeight)
-        }
-        // setNavWidth(5)
-        // console.log(navWidth);
-    }, [])
-
-    return <>
-            <Header ref={HeaderRef}>
-
-                <LogoLink href="/">
-                    <JsLogo
-                    Size={2.5}
-                    CircleColor={colorsRoles.White_10}
-                    FillColor={colorsRoles.White}
-                    />
-                </LogoLink>
-                <MenuButton/>
-                <Socials/>
-
-
-            </Header>
+  return (
+    <>
+      <Header ref={HeaderRef}>
+        <LogoLink href="/">
+          <JsLogo
+            Size={2.5}
+            CircleColor={colorsRoles.White_40}
+            FillColor={colorsRoles.White_80}
+          />
+        </LogoLink>
+        <MenuButton />
+        <Socials />
+      </Header>
     </>
-
+  );
 };
 
 export default NavBar;
-

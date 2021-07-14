@@ -1,24 +1,35 @@
+import { useContext } from "react";
 import styled from "styled-components";
 import { media } from "../../01-atoms/mediaqueries/MediaQueries";
 import HomeSkillNavItem from "../../03-organisms/HomeSkillNavItem/HomeSkillNavItem";
+import { GlobalContext, GlobalContextValues } from "../../data/contexts/global/GlobalProvider";
 import {skills} from "../../data/skills/skills-data";
 
-export const Wrapper = styled.ul`
+type IWrapper = {
+    navBarSize : number;
+}
+
+export const Wrapper = styled.ul<IWrapper>`
 width: 100%;
 height: 100vh;
 
+@media (min-width: 1024px) {
+    width: calc(100% - ${({navBarSize}) => navBarSize}px);
+}
+
 ${media.md`
     display: flex;
-    width: calc(100% - 80px);
 `}
 
 `;
 
 const HomePage = () => {
 
+    // const appContext  = useContext(GlobalContext);
+
     return <>
 
-        <Wrapper>
+        <Wrapper navBarSize={80}>
             {
                 skills.map((skill,index) => 
                     <HomeSkillNavItem 

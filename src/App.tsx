@@ -2,6 +2,7 @@
 import GlobalStyle from './components/01-atoms/GlobalStyle';
 import HeadItem from './components/01-atoms/HeadItem';
 import NavBar from './components/03-organisms/NavBar/NavBar';
+import ContactPage from './components/05-pages/contactpage/ContactPage';
 import GlobalProvider from './components/data/contexts/global/GlobalProvider';
 import Routes from './components/routes/routes';
 

@@ -1,5 +1,3 @@
-
-import { useState } from "react";
 import { ReactSVG } from "react-svg";
 import styled from "styled-components";
 import SocialItem from "../../02-molecules/socials/SocialItem";
@@ -15,24 +13,14 @@ export const StyledReactSVG = styled(ReactSVG) `
   svg {
     width: 1.5rem;
     height: 1.5rem;
-
-
     > path {
-      fill: ${colorsRoles.White_50};
+      fill: ${colorsRoles.White_80};
     }
   }
 `;
 
 const Socials = () => {
 
-  const [hoverAnime, setHoverAnime] = useState(false);
-
-  const handleStartHoverAnime = () => {
-    setHoverAnime(true);
-  }
-  // const handleFinishtHoverAnime = () => {
-  //   setHoverAnime(false);
-  // }
 
   return (
     <>
@@ -40,11 +28,13 @@ const Socials = () => {
               {
                 socialData.map((social,index) => 
                 <SocialItem 
-                key={index}
-                to={social.SocialLink}
+                  key={index}
+                  to={social.SocialLink}
                 >
                   <StyledReactSVG 
-                  src={social.SocialIcon} />
+                    src={social.SocialIcon} 
+                  />
+
                 </SocialItem>
                 )
               }
