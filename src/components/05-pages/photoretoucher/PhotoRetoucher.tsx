@@ -1,9 +1,8 @@
 import styled from "styled-components";
-import SkillPageHeaderTemplate from "../../03-organisms/skillpageheader/SkillPageHeaderTemplate";
+import SkillPageHeaderTemplate from "../../03-organisms/skillpage/SkillPageHeaderTemplate";
 
 export const PageWrapper = styled.main`
     width: calc(100% - 80px);
-    background-color: red;
 `
 
 const PhotoRetoucher = () => {

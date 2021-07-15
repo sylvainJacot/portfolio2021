@@ -7,12 +7,25 @@ import { media } from "../../01-atoms/mediaqueries/MediaQueries";
 import Socials from "./Socials";
 import { animations } from "../../01-atoms/animations/transitions";
 
+
 export const Header = styled.header`
+  position: relative;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 1rem calc((100vw - 75.625vw) / 2);
   background-color: ${colorsRoles.DarkGrey2};
   z-index: 10;
+
+  > ul {
+    display: none;
+  }
+
+  ${media.sm`
+  > ul {
+      display: flex;
+    }
+  `}
 
   ${media.md`
     position: fixed;
@@ -21,6 +34,9 @@ export const Header = styled.header`
     padding: 4rem 1rem;
     height: 100vh;
     width: fit-content;
+    > ul {
+      flex-direction: column;
+    }
 `}
 `;
 

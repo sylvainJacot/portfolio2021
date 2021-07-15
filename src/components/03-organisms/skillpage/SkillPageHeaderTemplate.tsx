@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import styled from "styled-components";
+import { colorsRoles, gradients } from '../../01-atoms/colors';
 import ClientIcon from "../../02-molecules/clientsicons/ClientIcon";
 import { devClients, photoClients, skills, uiuxClients } from "../../data/skills/skills-data";
 
@@ -11,7 +12,7 @@ type ISkillProps = {
 }
 
 export const HeaderPicture = styled.img`
-
+    position: absolute;
 `;
 
 export const HeaderPictureWrapper = styled.div`
@@ -23,15 +24,17 @@ export const HeaderTextContent = styled.div`
 `;
 
 export const HeaderTopWrapper = styled.div`
-
+    display: flex;
+    align-items: center;
 `;
 
 export const HeaderClients = styled.aside`
-
+    display: flex;
 `;
 
 export const HeaderWrapper = styled.header`
-
+    padding: 5rem 0;
+    ${gradients.DarkGreyLeftToRight};
 `;
 
 const SkillPageHeaderTemplate:FC<ISkillProps> = ({isUXUI,isDEV,isPHOTO}) => {
@@ -40,6 +43,7 @@ const SkillPageHeaderTemplate:FC<ISkillProps> = ({isUXUI,isDEV,isPHOTO}) => {
     return <>
 
         <HeaderWrapper>
+
                 <HeaderTopWrapper>
 
                     <HeaderPictureWrapper>
@@ -86,7 +90,6 @@ const SkillPageHeaderTemplate:FC<ISkillProps> = ({isUXUI,isDEV,isPHOTO}) => {
                     </HeaderTextContent>
                     
                 </HeaderTopWrapper>
-
                 <HeaderClients>
                         {
                             isUXUI && uiuxClients.map((client,index) => 
@@ -113,6 +116,7 @@ const SkillPageHeaderTemplate:FC<ISkillProps> = ({isUXUI,isDEV,isPHOTO}) => {
                             )
                         }
                 </HeaderClients>
+        
         </HeaderWrapper>
 
     </>

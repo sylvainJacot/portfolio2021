@@ -85,6 +85,12 @@ export const gradients = {
     -moz-background-image: linear-gradient(-45deg, ${colorsRoles.DarkGrey} 0%, ${colorsRoles.DarkGrey2} 100%); opacity: 50%;
     -o-background-image: linear-gradient(-45deg, ${colorsRoles.DarkGrey} 0%, ${colorsRoles.DarkGrey2} 100%); opacity: 50%;
     `,
+    DarkGreyLeftToRight: `
+    background-image: linear-gradient(90deg, ${colorsRoles.DarkGrey2} 0%, ${colorsRoles.DarkGrey} 100%);
+    -webkit-background-image: linear-gradient(90deg, ${colorsRoles.DarkGrey2} 0%, ${colorsRoles.DarkGrey} 100%);
+    -moz-background-image: linear-gradient(90deg, ${colorsRoles.DarkGrey2} 0%, ${colorsRoles.DarkGrey} 100%);
+    -o-background-image: linear-gradient(90deg, ${colorsRoles.DarkGrey2} 0%, ${colorsRoles.DarkGrey} 100%);
+    `,
     RadialBg1 : `
     background-image: radial-gradient(closest-side, ${colors.White} 0%, rgba(255,255,255,0.00) 100%); opacity 30%;
     -webkit-background-image: radial-gradient(closest-side, ${colors.White} 0%, rgba(255,255,255,0.00) 100%); opacity 30%;
