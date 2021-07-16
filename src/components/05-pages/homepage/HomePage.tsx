@@ -2,7 +2,7 @@ import { useContext } from "react";
 import styled from "styled-components";
 import { media } from "../../01-atoms/mediaqueries/MediaQueries";
 import HomeSkillNavItem from "../../03-organisms/HomeSkillNavItem/HomeSkillNavItem";
-import { GlobalContext, GlobalContextValues } from "../../data/contexts/global/GlobalProvider";
+import GlobalProvider, { GlobalContext } from "../../data/contexts/global/GlobalProvider";
 import {skills} from "../../data/skills/skills-data";
 
 type IWrapper = {
@@ -25,40 +25,29 @@ ${media.md`
 
 const HomePage = () => {
 
-    // const appContext  = useContext(GlobalContext);
+    const { navBarSize }  = useContext(GlobalContext);
 
-    return <>
-
-    <GlobalContext.Consumer>
-
-        {
-                () => {
-                const {navBarSize} = GlobalContextValues;
-                return (
-                    <Wrapper navBarSize={navBarSize}>
-                    {
-                        skills.map((skill,index) => 
-                            <HomeSkillNavItem 
-                            key={index}
-                            Titre={skill.SkillTitle}
-                            ImgSrc={skill.SkillHeroImg}
-                            SubTitle={skill.SkillQuote}
-                            Color={skill.SkillColor}
-                            LightText={skill.SkillLightCtaLabel}
-                            gradient={skill.SkillGradient}
-                            label={skill.SkillCtaLabel}
-                            pathName={skill.SkillRouterPath}
-                            />
-                        )
-                    }
-                </Wrapper>
+    return(
+        <GlobalProvider>
+            <Wrapper navBarSize={navBarSize}>
+            {
+                skills.map((skill,index) => 
+                    <HomeSkillNavItem 
+                    key={index}
+                    Titre={skill.SkillTitle}
+                    ImgSrc={skill.SkillHeroImg}
+                    SubTitle={skill.SkillQuote}
+                    Color={skill.SkillColor}
+                    LightText={skill.SkillLightCtaLabel}
+                    gradient={skill.SkillGradient}
+                    label={skill.SkillCtaLabel}
+                    pathName={skill.SkillRouterPath}
+                    />
                 )
             }
-        }
-
-    </GlobalContext.Consumer>
-
-    </>
+        </Wrapper>
+    </GlobalProvider>
+    )
 
 };
 

@@ -1,16 +1,17 @@
-import styled from "styled-components";
+
+import SkillPageClients from "../../03-organisms/skillpage/SkillPageClients";
 import SkillPageHeaderTemplate from "../../03-organisms/skillpage/SkillPageHeaderTemplate"
 import SkillPageMain from "../../03-organisms/skillpage/SkillPageMain";
+import SkillPageMethodology from "../../03-organisms/skillpage/SkillPageMethodology";
 
-export const PageWrapper = styled.main`
-    width: calc(100% - 80px);
-`
 
 const UxUiDesigner = () => {
     return <>
 
         <SkillPageMain>
             <SkillPageHeaderTemplate isUXUI />
+            <SkillPageClients isUXUI />
+            <SkillPageMethodology isUXUI />
         </SkillPageMain>
 
     </>

@@ -1,25 +1,41 @@
-import { FC, createContext } from "react";
+import { FC, createContext, useState} from "react";
 
-// Check tuto : https://wanago.io/2020/09/28/react-context-api-hooks-typescript/
+// Inspired from : https://codesandbox.io/s/typescript-react-usecontext-example-ufwux?file=/src/Context.tsx:38-46
 
-type IGlobalContext = {
+type SetValue = (value: any) => void;
+
+interface IGlobalContext  {
     navBarSize: number;
-    testOtherData: number;
+    setNavBarSize: SetValue;
+    aboutPageHidden: boolean;
+    setAboutPageHidden: SetValue;  
 }
 
-export const GlobalContext = createContext<IGlobalContext | null>(null);
+export const initialGlobalValues: IGlobalContext ={
+    navBarSize: 0,
+    setNavBarSize: () => {},
+    aboutPageHidden: false,
+    setAboutPageHidden: () => {}, 
+}
 
-export const GlobalContextValues: IGlobalContext = {
-    navBarSize: 160,
-    testOtherData: 0
-  };
+export const GlobalContext = createContext(initialGlobalValues);
 
 
-const GlobalProvider:FC= ({children}) => {
+const GlobalProvider:FC= props => {
+
+    const [navBarSize, setNavBarSize] = useState(0);
+    const [aboutPageHidden, setAboutPageHidden] = useState(false);
 
     return <>
-        <GlobalContext.Provider value={GlobalContextValues}>
-            {children}
+        <GlobalContext.Provider  value={{
+            navBarSize,
+            setNavBarSize,
+            aboutPageHidden,
+            setAboutPageHidden
+        }}>
+
+            {props.children}
+
         </GlobalContext.Provider>
         </>
 }

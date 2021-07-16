@@ -114,3 +114,57 @@ export const photoClients = [
     },
     
 ]
+
+export const uiuxMethodo = [
+    {
+        MethodoName: "Javascript",
+        MethodoLogo: icons.Javascript,
+        MethodoAlt: "Javascript"
+    },
+    {
+        MethodoName: "Javascript",
+        MethodoLogo: icons.Javascript,
+        MethodoAlt: "Javascript"
+    },
+    {
+        MethodoName: "Javascript",
+        MethodoLogo: icons.Javascript,
+        MethodoAlt: "Javascript"
+    },
+]
+
+export const devMethodo = [
+    {
+        MethodoName: "Javascript",
+        MethodoLogo: icons.Javascript,
+        MethodoAlt: "Javascript"
+    },
+    {
+        MethodoName: "Javascript",
+        MethodoLogo: icons.Javascript,
+        MethodoAlt: "Javascript"
+    },
+    {
+        MethodoName: "Javascript",
+        MethodoLogo: icons.Javascript,
+        MethodoAlt: "Javascript"
+    },
+]
+
+export const photoMethodo = [
+    {
+        MethodoName: "Javascript",
+        MethodoLogo: icons.Javascript,
+        MethodoAlt: "Javascript"
+    },
+    {
+        MethodoName: "Javascript",
+        MethodoLogo: icons.Javascript,
+        MethodoAlt: "Javascript"
+    },
+    {
+        MethodoName: "Javascript",
+        MethodoLogo: icons.Javascript,
+        MethodoAlt: "Javascript"
+    },
+]

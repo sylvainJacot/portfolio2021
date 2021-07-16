@@ -1,20 +1,27 @@
-import {FC} from "react";
+import {FC, useContext} from "react";
 import styled from "styled-components";
+import { GlobalContext } from "../../data/contexts/global/GlobalProvider";
 
 
-type IPropsMain = {
-    children:any;
+type IPageWrapper = {
+    navBarSize: number,
 }
 
-export const PageWrapper = styled.main`
-    width: calc(100% - 80px);
+export const PageWrapper = styled.main<IPageWrapper>`
+
+    @media (min-width: 1024px) {
+        width: calc(100% - ${({navBarSize}) => navBarSize}px);
+    }
 `
 
-const SkillPageMain:FC<IPropsMain> = ({children}) => {
+const SkillPageMain:FC = props => {
+
+    const {navBarSize} = useContext(GlobalContext)
+
     return <>
 
-        <PageWrapper>
-            {children}
+        <PageWrapper navBarSize={navBarSize}>
+            {props.children}
         </PageWrapper>
 
     </>

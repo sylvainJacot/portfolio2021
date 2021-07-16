@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useContext } from "react";
 import styled from "styled-components";
 import { colorsRoles } from "../../01-atoms/colors";
 import JsLogo from "../../01-atoms/icons/JsLogo";
@@ -6,6 +6,7 @@ import MenuButton from "../../02-molecules/MenuButton/MenuButton";
 import { media } from "../../01-atoms/mediaqueries/MediaQueries";
 import Socials from "./Socials";
 import { animations } from "../../01-atoms/animations/transitions";
+import { GlobalContext } from "../../data/contexts/global/GlobalProvider";
 
 
 export const Header = styled.header`
@@ -59,16 +60,16 @@ export const LogoLink = styled.a`
 
 const NavBar = () => {
   const HeaderRef = useRef<HTMLTextAreaElement>(null);
-  // const {navWidth, setNavWidth} = useContext(GlobalContext);
+  const { setNavBarSize }  = useContext(GlobalContext);
 
   useEffect(() => {
-    if (HeaderRef.current) {
-      // const NavBarHeight = HeaderRef.current.clientWidth;
-      // console.log(NavBarHeight)
+    
+    if (HeaderRef.current && window.matchMedia("(min-width: 1025px)").matches) {
+      const navBarHeight = HeaderRef.current.clientWidth;
+      setNavBarSize(navBarHeight)
     }
-    // setNavWidth(5)
-    // console.log(navWidth);
-  }, []);
+    
+  });
 
   return (
     <>

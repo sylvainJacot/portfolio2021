@@ -13,6 +13,9 @@ type ISkillProps = {
 
 export const HeaderPicture = styled.img`
     position: absolute;
+    top: 0;
+    left: 0;
+    height: 700px;
 `;
 
 export const HeaderPictureWrapper = styled.div`
@@ -28,12 +31,12 @@ export const HeaderTopWrapper = styled.div`
     align-items: center;
 `;
 
-export const HeaderClients = styled.aside`
-    display: flex;
-`;
+
 
 export const HeaderWrapper = styled.header`
     padding: 5rem 0;
+    border-bottom-left-radius: 50% 20%;
+    border-bottom-right-radius: 50% 20%;
     ${gradients.DarkGreyLeftToRight};
 `;
 
@@ -90,32 +93,6 @@ const SkillPageHeaderTemplate:FC<ISkillProps> = ({isUXUI,isDEV,isPHOTO}) => {
                     </HeaderTextContent>
                     
                 </HeaderTopWrapper>
-                <HeaderClients>
-                        {
-                            isUXUI && uiuxClients.map((client,index) => 
-                                <ClientIcon 
-                                    key={index}
-                                    src={client.ClientLogo}
-                                />
-                            )
-                        }
-                        {
-                            isDEV && devClients.map((client,index) => 
-                                <ClientIcon 
-                                    key={index}
-                                    src={client.ClientLogo}
-                                />
-                            )
-                        }
-                        {
-                            isPHOTO && photoClients.map((client,index) => 
-                                <ClientIcon 
-                                    key={index}
-                                    src={client.ClientLogo}
-                                />
-                            )
-                        }
-                </HeaderClients>
         
         </HeaderWrapper>
 

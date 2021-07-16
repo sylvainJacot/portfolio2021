@@ -18,11 +18,12 @@ function App() {
 
   return (
     <>
-      <GlobalProvider/>
-      <GlobalStyle/>
-      <HeadItem/>
-      <NavBar/>
-      <Routes/>
+      <GlobalProvider>
+        <GlobalStyle/>
+        <HeadItem/>
+        <NavBar/>
+        <Routes/>
+      </GlobalProvider>
     </>
   );
 }
