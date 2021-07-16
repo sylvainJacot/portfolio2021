@@ -29,23 +29,34 @@ const HomePage = () => {
 
     return <>
 
-        <Wrapper navBarSize={80}>
-            {
-                skills.map((skill,index) => 
-                    <HomeSkillNavItem 
-                    key={index}
-                    Titre={skill.SkillTitle}
-                    ImgSrc={skill.SkillHeroImg}
-                    SubTitle={skill.SkillQuote}
-                    Color={skill.SkillColor}
-                    LightText={skill.SkillLightCtaLabel}
-                    gradient={skill.SkillGradient}
-                    label={skill.SkillCtaLabel}
-                    pathName={skill.SkillRouterPath}
-                    />
+    <GlobalContext.Consumer>
+
+        {
+                () => {
+                const {navBarSize} = GlobalContextValues;
+                return (
+                    <Wrapper navBarSize={navBarSize}>
+                    {
+                        skills.map((skill,index) => 
+                            <HomeSkillNavItem 
+                            key={index}
+                            Titre={skill.SkillTitle}
+                            ImgSrc={skill.SkillHeroImg}
+                            SubTitle={skill.SkillQuote}
+                            Color={skill.SkillColor}
+                            LightText={skill.SkillLightCtaLabel}
+                            gradient={skill.SkillGradient}
+                            label={skill.SkillCtaLabel}
+                            pathName={skill.SkillRouterPath}
+                            />
+                        )
+                    }
+                </Wrapper>
                 )
             }
-        </Wrapper>
+        }
+
+    </GlobalContext.Consumer>
 
     </>
 

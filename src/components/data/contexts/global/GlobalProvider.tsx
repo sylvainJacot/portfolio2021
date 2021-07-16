@@ -4,12 +4,14 @@ import { FC, createContext } from "react";
 
 type IGlobalContext = {
     navBarSize: number;
+    testOtherData: number;
 }
 
 export const GlobalContext = createContext<IGlobalContext | null>(null);
 
 export const GlobalContextValues: IGlobalContext = {
-    navBarSize: 0,
+    navBarSize: 160,
+    testOtherData: 0
   };
 
 
