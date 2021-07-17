@@ -1,5 +1,7 @@
 import {FC} from "react"
 import styled from "styled-components";
+import Grid, { colSizes } from "../../01-atoms/layout/Grid";
+import Row from "../../01-atoms/layout/Row";
 import ClientIcon from "../../02-molecules/clientsicons/ClientIcon";
 import { devClients, photoClients, uiuxClients } from "../../data/skills/skills-data";
 
@@ -10,19 +12,32 @@ type ISkillProps = {
     isPHOTO? : boolean;
 }
 
-export const Wrapper = styled.div`
+export const Wrapper = styled(Row)`
 
 `;
 
 export const HeaderClients = styled.aside`
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 `;
+
 
 const SkillPageClients:FC<ISkillProps> = ({isUXUI,isDEV,isPHOTO}) => {
     return <>
-            <Wrapper>
+        <Grid>
+            <Wrapper
+            StartXs={2}
+            EndXs={9}
+            StartSm={3}
+            EndSm={15}
+            StartMd={10}
+            EndMd={21}
+            StartLg={10}
+            EndLg={21}
+            >
 
-                I collaborated with
+                <h3>I collaborated with</h3>
 
                 <HeaderClients>
                             {
@@ -51,6 +66,7 @@ const SkillPageClients:FC<ISkillProps> = ({isUXUI,isDEV,isPHOTO}) => {
                             }
                     </HeaderClients>
             </Wrapper>
+            </Grid>
     </>
 
 };

@@ -1,8 +1,11 @@
 import { FC } from 'react';
 import styled from "styled-components";
-import { colorsRoles, gradients } from '../../01-atoms/colors';
-import ClientIcon from "../../02-molecules/clientsicons/ClientIcon";
-import { devClients, photoClients, skills, uiuxClients } from "../../data/skills/skills-data";
+import {  colorsRoles, gradients } from '../../01-atoms/colors';
+import { fontsFamilies } from '../../01-atoms/GlobalStyle';
+import Grid from '../../01-atoms/layout/Grid';
+import Row from '../../01-atoms/layout/Row';
+import media from '../../01-atoms/mediaqueries/MediaQueries';
+import { skills } from "../../data/skills/skills-data";
 
 
 type ISkillProps = {
@@ -12,32 +15,42 @@ type ISkillProps = {
 }
 
 export const HeaderPicture = styled.img`
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 700px;
+    width: 100%;
+    max-width: 25rem;
+    margin: 0 auto;
 `;
 
-export const HeaderPictureWrapper = styled.div`
-
-`;
-
-export const HeaderTextContent = styled.div`
-
-`;
-
-export const HeaderTopWrapper = styled.div`
+export const HeaderPictureWrapper = styled(Row)`
     display: flex;
-    align-items: center;
+`;
+
+export const HeaderTextContent = styled(Row)`
+    h1 {
+       font-family:  ${fontsFamilies.poppinsBold};
+        color: ${colorsRoles.White};
+    }
+    p{
+        font-family: ${fontsFamilies.poppinsRegular};
+        color: ${colorsRoles.White};
+    }
+`;
+
+export const HeaderTopWrapperGrid = styled(Grid)`
+
 `;
 
 
 
 export const HeaderWrapper = styled.header`
-    padding: 5rem 0;
+    border-bottom-left-radius: 50% 8%;
+    border-bottom-right-radius: 50% 8%;
+    ${gradients.DarkGreyLeftToRight};
+    padding-bottom: 4rem;
+
+    ${media.sm} {
     border-bottom-left-radius: 50% 20%;
     border-bottom-right-radius: 50% 20%;
-    ${gradients.DarkGreyLeftToRight};
+    }
 `;
 
 const SkillPageHeaderTemplate:FC<ISkillProps> = ({isUXUI,isDEV,isPHOTO}) => {
@@ -47,9 +60,12 @@ const SkillPageHeaderTemplate:FC<ISkillProps> = ({isUXUI,isDEV,isPHOTO}) => {
 
         <HeaderWrapper>
 
-                <HeaderTopWrapper>
+                <HeaderTopWrapperGrid>
 
-                    <HeaderPictureWrapper>
+                    <HeaderPictureWrapper
+                        StartXs={2}
+                        EndXs={9}
+                    >
 
                     {
                             isUXUI && 
@@ -67,7 +83,16 @@ const SkillPageHeaderTemplate:FC<ISkillProps> = ({isUXUI,isDEV,isPHOTO}) => {
 
                     </HeaderPictureWrapper>
 
-                    <HeaderTextContent>
+                    <HeaderTextContent
+                    StartXs={2}
+                    EndXs={9}
+                    StartSm={1}
+                    EndSm={17}
+                    StartMd={10}
+                    EndMd={21}
+                    StartLg={10}
+                    EndLg={21}
+                    >
                         {
                             isUXUI && 
                             <>
@@ -92,7 +117,7 @@ const SkillPageHeaderTemplate:FC<ISkillProps> = ({isUXUI,isDEV,isPHOTO}) => {
                         
                     </HeaderTextContent>
                     
-                </HeaderTopWrapper>
+                </HeaderTopWrapperGrid>
         
         </HeaderWrapper>
 

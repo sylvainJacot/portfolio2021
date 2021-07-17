@@ -26,10 +26,10 @@ export const Wrapper = styled(NavLink)<IProps>`
   letter-spacing: 0.1rem;
   z-index: 1;
 
-    ${media.sm`
-      font-size: 1rem;
-      padding: 1rem 1.5rem;
-    `}
+ ${media.sm} {
+  font-size: 1rem;
+  padding: 1rem 1.5rem;
+}
 
   `
 

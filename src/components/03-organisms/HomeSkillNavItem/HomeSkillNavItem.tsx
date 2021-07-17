@@ -30,13 +30,14 @@ export const ContentWrapper = styled.div<StyledContent>`
   z-index: 1;
   width: 64%;
 
-  ${media.sm`
+ ${media.sm} {
   padding-right: 16%;
-  `}
-  ${media.md`
-    padding: 0;
+}
+
+ ${media.md} {
+  padding: 0;
     width: 100%;
-  `}
+}
 
   & > h1 {
     position: relative;
@@ -63,20 +64,20 @@ export const ContentWrapper = styled.div<StyledContent>`
     font-size: 1rem;
     margin: 2rem 0;
 
-    ${media.md`
-      position: absolute;
+ ${media.md} {
+  position: absolute;
       opacity: 0;
       transform-origin: bottom center;
       transform: translateY(1.5rem) scaleY(0.7);
-    `}
+}
   }
   & > a {
-    ${media.md`
-      position: absolute;
+ ${media.md} {
+  position: absolute;
       opacity: 0;
       transform-origin: bottom center;
       transform: translateY(1.5rem) scaleY(1);
-    `}
+}
   }
 `;
 export const Picture = styled.img`
@@ -86,16 +87,17 @@ export const Picture = styled.img`
   bottom: -22rem;
   transform: translate(-50%, -50%);
 
-  ${media.sm`
-    width: 24rem;
+ ${media.sm} {
+  width: 24rem;
     left: 8rem;
     bottom: -26rem;
-  `}
-  ${media.md`
-    width: 24rem;
+}
+ ${media.md} {
+  width: 24rem;
     left: 50%;
     bottom: -24vh;
-  `}
+}
+
 `;
 
 export const Wrapper = styled.li<StyledWrapper>`
@@ -136,11 +138,12 @@ export const Wrapper = styled.li<StyledWrapper>`
     opacity: 0.2;
   }
 
-  ${media.sm`
+ ${media.sm} {
   padding: 6rem 2rem;
-  `}
-  ${media.md`
-    padding: 6rem 4rem;
+}
+
+ ${media.md} {
+  padding: 6rem 4rem;
     ${Picture} {
       transition: ${transitions.easeOut3ms};
     }
@@ -175,9 +178,7 @@ export const Wrapper = styled.li<StyledWrapper>`
       }
 
   }
-  `}
-
-
+}
   
 `;
 

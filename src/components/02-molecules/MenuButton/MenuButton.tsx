@@ -7,18 +7,19 @@ export const Wrapper = styled.button`
     height: 3rem;
     background-color: ${colorsRoles.White_10};
     border-radius: 0.5rem;
-    ${media.sm`
+ ${media.sm} {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    `}
-    ${media.md`
-        position: relative;
+}
+ ${media.md} {
+    position: relative;
         top: unset;
         left: unset;
         transform: translate(0,0);
-    `}
+}
+
 `;
 
 const MenuButton = () => {

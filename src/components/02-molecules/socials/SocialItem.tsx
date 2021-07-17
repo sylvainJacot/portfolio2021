@@ -16,9 +16,9 @@ export const SocialItemWrapper = styled.li`
 display: flex;
 justify-content: center;
   &:not(:last-child) {
-    ${media.md`
-    margin-bottom: 1.5rem;
-    `}
+ ${media.md} {
+  margin-bottom: 1.5rem;
+}
   }
   > a {
     padding: 0 1rem;

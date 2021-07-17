@@ -13,13 +13,11 @@ export const Wrapper = styled.ul<IWrapper>`
 width: 100%;
 height: 100vh;
 
-@media (min-width: 1024px) {
-    width: calc(100% - ${({navBarSize}) => navBarSize}px);
-}
 
-${media.md`
+ ${media.md} {
     display: flex;
-`}
+    width: calc(100% - ${({navBarSize}) => navBarSize}px);
+    }
 
 `;
 
