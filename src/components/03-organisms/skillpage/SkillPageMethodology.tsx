@@ -4,6 +4,7 @@ import Grid from "../../01-atoms/layout/Grid";
 import Row from "../../01-atoms/layout/Row";
 import MethodoIcon from "../../02-molecules/methodoicon/MethodoIcon";
 import { devMethodo, photoMethodo, uiuxMethodo } from "../../data/skills/skills-data";
+import {HeadingSecondaryStyle} from "../../01-atoms/typography/headings/HeadingSecondary"
 
 
 type ISkillProps = {
@@ -16,19 +17,27 @@ export const MethodoIconsWrapper = styled(Row)`
     display: flex;
 `
 
-export const H3 = styled(Row)`
-    text-align: center;
-`
-
 export const Wrapper = styled(Grid)`
 
 `;
+
+export const HeadingSecondaryStyled = styled(HeadingSecondaryStyle)`
+    margin: 2rem 0;
+`
 
 const SkillPageMethodology:FC<ISkillProps> = ({isUXUI,isDEV,isPHOTO}) => {
     return <>
 
             <Wrapper>
-            <H3>Methodo</H3>
+                <Row
+                    StartSm={3}
+                    EndSm={15}
+                    StartMd={10}
+                    EndMd={21}
+                    StartLg={10}
+                    EndLg={21}
+                >
+            <HeadingSecondaryStyled Positive={true}>Methodo</HeadingSecondaryStyled>
                 <MethodoIconsWrapper>
                         {
                             isUXUI && uiuxMethodo.map((item) => 
@@ -52,6 +61,7 @@ const SkillPageMethodology:FC<ISkillProps> = ({isUXUI,isDEV,isPHOTO}) => {
                             )
                         }
                 </MethodoIconsWrapper>
+                </Row>
             </Wrapper>
     </>
 

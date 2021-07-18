@@ -1,9 +1,10 @@
 import {FC} from "react"
 import styled from "styled-components";
-import Grid, { colSizes } from "../../01-atoms/layout/Grid";
+import Grid from "../../01-atoms/layout/Grid";
 import Row from "../../01-atoms/layout/Row";
 import ClientIcon from "../../02-molecules/clientsicons/ClientIcon";
 import { devClients, photoClients, uiuxClients } from "../../data/skills/skills-data";
+import HeadingSecondary, { HeadingSecondaryStyle } from "../../01-atoms/typography/headings/HeadingSecondary";
 
 
 type ISkillProps = {
@@ -16,6 +17,10 @@ export const Wrapper = styled(Row)`
 
 `;
 
+export const HeadingSecondaryStyled = styled(HeadingSecondaryStyle)`
+    margin: 2rem 0;
+`
+
 export const HeaderClients = styled.aside`
     display: flex;
     flex-wrap: wrap;
@@ -27,8 +32,6 @@ const SkillPageClients:FC<ISkillProps> = ({isUXUI,isDEV,isPHOTO}) => {
     return <>
         <Grid>
             <Wrapper
-            StartXs={2}
-            EndXs={9}
             StartSm={3}
             EndSm={15}
             StartMd={10}
@@ -37,7 +40,7 @@ const SkillPageClients:FC<ISkillProps> = ({isUXUI,isDEV,isPHOTO}) => {
             EndLg={21}
             >
 
-                <h3>I collaborated with</h3>
+                <HeadingSecondaryStyled Positive={true}>I collaborated with</HeadingSecondaryStyled>
 
                 <HeaderClients>
                             {

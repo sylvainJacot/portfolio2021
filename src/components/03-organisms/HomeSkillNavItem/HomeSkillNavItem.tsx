@@ -2,9 +2,10 @@ import { FC } from "react";
 import styled from "styled-components";
 import CallToAction from "../../02-molecules/CallToAction/CallToAction";
 import { colorsRoles, gradients } from "../../01-atoms/colors";
-import { fontsFamilies } from "../../01-atoms/GlobalStyle";
 import { media } from "../../01-atoms/mediaqueries/MediaQueries";
 import { transitions } from "../../01-atoms/animations/transitions";
+import HeadingPrimary from "../../01-atoms/typography/headings/HeadingPrimary";
+import { Paragraph } from "../../01-atoms/typography/paragraphs/ParagraphPrimary";
 
 type Props = {
   Titre: string;
@@ -24,6 +25,10 @@ type StyledContent = {
   Color: string;
 };
 
+export const ParagraphPrimaryStyled = styled(Paragraph)`
+  margin: 2rem 0 1rem 0;
+`
+
 export const ContentWrapper = styled.div<StyledContent>`
   display: flex;
   flex-direction: column;
@@ -39,38 +44,17 @@ export const ContentWrapper = styled.div<StyledContent>`
     width: 100%;
 }
 
-  & > h1 {
-    position: relative;
-    font-family: ${fontsFamilies.poppinsBlackBold};
-    color: ${colorsRoles.White};
-    letter-spacing: 0.1rem;
-    font-size: 1.5rem;
-    line-height: 1.5rem;
-
-    &:after {
-      position: absolute;
-      display: block;
-      content: "";
-      bottom: -1rem;
-      height: 0.1rem;
-      width: 2.5rem;
-      background-color: ${(props) => props.Color};
-      transition: ${transitions.easeOut4ms};
-    }
   }
-  & > p {
-    font-family: ${fontsFamilies.poppinsRegular};
-    color: ${colorsRoles.White};
-    font-size: 1rem;
-    margin: 2rem 0;
 
  ${media.md} {
-  position: absolute;
+  & > p {
+      position: absolute;
       opacity: 0;
       transform-origin: bottom center;
       transform: translateY(1.5rem) scaleY(0.7);
-}
   }
+}
+
   & > a {
  ${media.md} {
   position: absolute;
@@ -196,8 +180,8 @@ const HomeSkillNavItem: FC<Props> = ({
     <>
       <Wrapper gradient={gradient}>
         <ContentWrapper Color={Color}>
-          <h1>{Titre}</h1>
-          <p>{SubTitle}</p>
+          <HeadingPrimary Color={Color}>{Titre}</HeadingPrimary>
+          <ParagraphPrimaryStyled>{SubTitle}</ParagraphPrimaryStyled>
           <CallToAction
             label={label}
             to={pathName}

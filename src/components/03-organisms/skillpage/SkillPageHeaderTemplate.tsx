@@ -1,11 +1,12 @@
 import { FC } from 'react';
 import styled from "styled-components";
-import {  colorsRoles, gradients } from '../../01-atoms/colors';
-import { fontsFamilies } from '../../01-atoms/GlobalStyle';
+import { gradients } from '../../01-atoms/colors';
 import Grid from '../../01-atoms/layout/Grid';
 import Row from '../../01-atoms/layout/Row';
 import media from '../../01-atoms/mediaqueries/MediaQueries';
 import { skills } from "../../data/skills/skills-data";
+import HeadingPrimary from '../../01-atoms/typography/headings/HeadingPrimary';
+import ParagraphPrimary, { Paragraph } from '../../01-atoms/typography/paragraphs/ParagraphPrimary';
 
 
 type ISkillProps = {
@@ -16,7 +17,7 @@ type ISkillProps = {
 
 export const HeaderPicture = styled.img`
     width: 100%;
-    max-width: 25rem;
+    max-width: 20rem;
     margin: 0 auto;
 `;
 
@@ -24,16 +25,14 @@ export const HeaderPictureWrapper = styled(Row)`
     display: flex;
 `;
 
+export const ParagraphPrimaryStyled = styled(Paragraph)`
+    margin-top: 2rem;
+`
+
 export const HeaderTextContent = styled(Row)`
-    h1 {
-       font-family:  ${fontsFamilies.poppinsBold};
-        color: ${colorsRoles.White};
-    }
-    p{
-        font-family: ${fontsFamilies.poppinsRegular};
-        color: ${colorsRoles.White};
-    }
+
 `;
+
 
 export const HeaderTopWrapperGrid = styled(Grid)`
 
@@ -84,8 +83,8 @@ const SkillPageHeaderTemplate:FC<ISkillProps> = ({isUXUI,isDEV,isPHOTO}) => {
                     </HeaderPictureWrapper>
 
                     <HeaderTextContent
-                    StartXs={2}
-                    EndXs={9}
+                    StartXs={1}
+                    EndXs={11}
                     StartSm={1}
                     EndSm={17}
                     StartMd={10}
@@ -96,22 +95,22 @@ const SkillPageHeaderTemplate:FC<ISkillProps> = ({isUXUI,isDEV,isPHOTO}) => {
                         {
                             isUXUI && 
                             <>
-                            <h1>{skills[0].SkillTitle}</h1>
-                            <p>{skills[0].SkillIntro}</p>
+                            <HeadingPrimary Color={skills[0].SkillColor}>{skills[0].SkillTitle}</HeadingPrimary>
+                            <ParagraphPrimaryStyled>{skills[0].SkillIntro}</ParagraphPrimaryStyled>
                             </>
                         }
                                                 {
                             isDEV && 
                             <>
-                            <h1>{skills[1].SkillTitle}</h1>
-                            <p>{skills[1].SkillIntro}</p>
+                            <HeadingPrimary Color={skills[1].SkillColor}>{skills[1].SkillTitle}</HeadingPrimary>
+                            <ParagraphPrimaryStyled>{skills[1].SkillIntro}</ParagraphPrimaryStyled>
                             </>
                         }
                                                 {
                             isPHOTO && 
                             <>
-                            <h1>{skills[2].SkillTitle}</h1>
-                            <p>{skills[2].SkillIntro}</p>
+                            <HeadingPrimary Color={skills[2].SkillColor}>{skills[2].SkillTitle}</HeadingPrimary>
+                            <ParagraphPrimaryStyled>{skills[2].SkillIntro}</ParagraphPrimaryStyled>
                             </>
                         }
                         
