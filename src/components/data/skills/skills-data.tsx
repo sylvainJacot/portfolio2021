@@ -11,7 +11,7 @@ export const skills = [
     {
         SkillTitle : "UX/UI Designer",
         SkillQuote : "I understand the perfect user interface should look good and work even better.",
-        SkillIntro : "This is the intro of UX/UI",
+        SkillIntro : "Projet mené à terme de ma formation UX/UI Design au CEPEGRA de Gosselies, Vitavi est l'application essentielle pour vos médicaments. Elles permet d'obtenir facilement les notices qui sont claires et simplifiées, et son système de rappel permet de ne jamais plus oublier ses médicaments ou ceux de vos proches.",
         SkillHeroImg : Parrot,
         SkillColor : colorsRoles.uiCol,
         SkillLightCtaLabel : false,
@@ -58,6 +58,31 @@ export const uiuxClients = [
         ClientName : "Love The Garden",
         ClientLogo : icons.LoveTheGarden,
         ClientAlt : "Love The Garden client"
+    },
+    {
+        ClientName : "Mazda",
+        ClientLogo : icons.Mazda,
+        ClientAlt : "Mazda client"
+    },
+    {
+        ClientName : "Mazda",
+        ClientLogo : icons.Mazda,
+        ClientAlt : "Mazda client"
+    },
+    {
+        ClientName : "Mazda",
+        ClientLogo : icons.Mazda,
+        ClientAlt : "Mazda client"
+    },
+    {
+        ClientName : "Mazda",
+        ClientLogo : icons.Mazda,
+        ClientAlt : "Mazda client"
+    },
+    {
+        ClientName : "Mazda",
+        ClientLogo : icons.Mazda,
+        ClientAlt : "Mazda client"
     },
     {
         ClientName : "Mazda",

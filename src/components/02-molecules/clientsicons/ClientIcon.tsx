@@ -16,7 +16,8 @@ export const StyledReactSVG = styled(ReactSVG) `
         align-items: center;
         justify-content: center;
         svg {
-            min-width: 100%;
+            width: 100%;
+            height: 100%;
             object-fit: contain;
             fill: ${colorsRoles.DarkGrey};  
             path {

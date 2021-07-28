@@ -1,12 +1,13 @@
-import { FC } from 'react';
+import { FC, useContext } from 'react';
 import styled from "styled-components";
 import { gradients } from '../../01-atoms/colors';
-import Grid from '../../01-atoms/layout/Grid';
+import { GridWrapper } from '../../01-atoms/layout/Grid';
+import { GlobalContext } from '../../data/contexts/global/GlobalProvider';
 import Row from '../../01-atoms/layout/Row';
 import media from '../../01-atoms/mediaqueries/MediaQueries';
 import { skills } from "../../data/skills/skills-data";
 import HeadingPrimary from '../../01-atoms/typography/headings/HeadingPrimary';
-import ParagraphPrimary, { Paragraph } from '../../01-atoms/typography/paragraphs/ParagraphPrimary';
+import { Paragraph } from '../../01-atoms/typography/paragraphs/ParagraphPrimary';
 
 
 type ISkillProps = {
@@ -15,32 +16,52 @@ type ISkillProps = {
     isPHOTO? : boolean;
 }
 
-export const HeaderPicture = styled.img`
+type IHeaderWrapper = {
+    navBarSize : number;
+}
+
+type IHeaderPicture = {
+    picReversed : boolean;
+}
+
+
+
+export const HeaderPicture = styled.img<IHeaderPicture>`
     width: 100%;
     max-width: 20rem;
     margin: 0 auto;
+    ${media.sm} {
+        max-width: 23rem;
+        transform: ${(props) =>(props.picReversed ? "scalex(-1)" : "")};
+    }
+    ${media.md} {
+        max-width: unset;
+    }
 `;
 
 export const HeaderPictureWrapper = styled(Row)`
     display: flex;
+    ${media.sm} {
+        position: absolute;
+    }
+    ${media.md} {
+        position: relative;
+        transform: translateY(1rem);
+    }
 `;
 
 export const ParagraphPrimaryStyled = styled(Paragraph)`
     margin-top: 2rem;
+    display: inline-block;
 `
 
 export const HeaderTextContent = styled(Row)`
-
-`;
-
-
-export const HeaderTopWrapperGrid = styled(Grid)`
-
+        width: 100%;
 `;
 
 
 
-export const HeaderWrapper = styled.header`
+export const HeaderWrapper = styled(GridWrapper)<IHeaderWrapper>`
     border-bottom-left-radius: 50% 8%;
     border-bottom-right-radius: 50% 8%;
     ${gradients.DarkGreyLeftToRight};
@@ -49,48 +70,63 @@ export const HeaderWrapper = styled.header`
     ${media.sm} {
     border-bottom-left-radius: 50% 20%;
     border-bottom-right-radius: 50% 20%;
+    min-height: 25rem;
+    align-items: center;
+    padding-bottom: unset;
+    }
+    ${media.md} {
+        width: calc(100% - ${props => props.navBarSize}px - 0.5rem);
+        min-height: unset;
+        max-height: 23rem;
+    }
+    ${media.lg} {
+        max-height: 31rem;
     }
 `;
 
 const SkillPageHeaderTemplate:FC<ISkillProps> = ({isUXUI,isDEV,isPHOTO}) => {
 
+    const { navBarSize }  = useContext(GlobalContext);
 
     return <>
 
-        <HeaderWrapper>
-
-                <HeaderTopWrapperGrid>
+        <header>
+        <HeaderWrapper navBarSize={navBarSize}>
 
                     <HeaderPictureWrapper
                         StartXs={2}
-                        EndXs={9}
+                        EndXs={11}
+                        StartMd={0}
+                        EndMd={9}
+                        StartLg={0}
+                        EndLg={9}
                     >
 
                     {
                             isUXUI && 
-                            <HeaderPicture src={skills[0].SkillHeroImg} alt={skills[0].SkillTitle}/>
+                            <HeaderPicture src={skills[0].SkillHeroImg} alt={skills[0].SkillTitle} picReversed={false}/>
                         }
                                                 {
                             isDEV && 
-                            <HeaderPicture src={skills[1].SkillHeroImg} alt={skills[1].SkillTitle}/>
+                            <HeaderPicture src={skills[1].SkillHeroImg} alt={skills[1].SkillTitle} picReversed={true}/>
                         }
                                                 {
                             isPHOTO && 
-                            <HeaderPicture src={skills[2].SkillHeroImg} alt={skills[2].SkillTitle}/>
+                            <HeaderPicture src={skills[2].SkillHeroImg} alt={skills[2].SkillTitle} picReversed={true}/>
                         }
 
 
                     </HeaderPictureWrapper>
 
                     <HeaderTextContent
-                    StartXs={1}
+                    StartXs={2}
                     EndXs={11}
-                    StartSm={1}
-                    EndSm={17}
+                    StartSm={9}
+                    EndSm={18}
                     StartMd={10}
-                    EndMd={21}
+                    EndMd={22}
                     StartLg={10}
-                    EndLg={21}
+                    EndLg={22}
                     >
                         {
                             isUXUI && 
@@ -116,10 +152,10 @@ const SkillPageHeaderTemplate:FC<ISkillProps> = ({isUXUI,isDEV,isPHOTO}) => {
                         
                     </HeaderTextContent>
                     
-                </HeaderTopWrapperGrid>
+
         
         </HeaderWrapper>
-
+        </header>
     </>
 
 };

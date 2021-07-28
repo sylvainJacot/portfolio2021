@@ -7,7 +7,7 @@ type IHeadingSecondaryStyle = {
   Positive: boolean;
 }
 
-export const HeadingSecondaryStyle = styled.h2<IHeadingSecondaryStyle>`
+export const HeadingSecondaryStyle = styled.h3<IHeadingSecondaryStyle>`
     position: relative;
     font-family: ${fontsFamilies.poppinsBold};
     color: ${(props) => props.Positive ? colorsRoles.DarkGrey : colorsRoles.White};

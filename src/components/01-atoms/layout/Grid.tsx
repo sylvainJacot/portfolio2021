@@ -34,11 +34,11 @@ export const GridWrapper = styled.div<IGridProps>`
 
     ${media.md} {
     width: calc(100% - ${({navBarSize}) => navBarSize}px - .5rem);
-    grid-template-columns: repeat( ${colCount.lColCount}, ${colSizes.lColSize});
+    grid-template-columns: repeat(${colCount.lColCount}, ${colSizes.lColSize});
     }
 
     ${media.lg} {
-    grid-template-columns: repeat( ${colCount.dColCount}, ${colSizes.dColSize});
+    grid-template-columns: repeat(${colCount.dColCount}, ${colSizes.dColSize});
     }
 
 `;

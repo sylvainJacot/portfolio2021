@@ -9,8 +9,8 @@ const colors = {
     DarkGrey : "#202a3d",
     DarkGrey2 : "#171e2b",
 
-    // DarkGrey2 : "#7D7D7D",
-    // LightGrey : "#C5C5C5",
+
+    LightGrey : "hsla(219, 30.303030303030305%, 12.941176470588237%,0.1)",
     // LightGrey2 : "#e8e8e8",
     White : "#FFFFFF",
 
@@ -40,6 +40,7 @@ export const colorsRoles = {
     White : colors.White,
     DarkGrey: colors.DarkGrey,
     DarkGrey2: colors.DarkGrey2,
+    LightGrey: colors.LightGrey,
     // DarkGrey2: colors.DarkGrey2,
     // LightGrey : colors.LightGrey,
     // LightGrey2: colors.LightGrey2,
@@ -97,4 +98,14 @@ export const gradients = {
     -moz-background-image: radial-gradient(closest-side, ${colors.White} 0%, rgba(255,255,255,0.00) 100%); opacity 30%;
     -o-background-image: radial-gradient(closest-side, ${colors.White} 0%, rgba(255,255,255,0.00) 100%); opacity 30%;
     `,
+}
+
+export const projectColors = {
+    Evergreen: "#6CCDAC",
+    Samsung: "#1327a0",
+    Kia : "#BB152B",
+    Telenet : "#FFBA00",
+    Clavie : "#205aa4",
+    SoSmart : "#e31742",
+    Parentreprise : "#6c3d8e",
 }

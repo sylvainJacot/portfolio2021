@@ -1,15 +1,12 @@
-import styled from "styled-components";
+import SkillPageClients from "../../03-organisms/skillpage/SkillPageClients";
 import SkillPageHeaderTemplate from "../../03-organisms/skillpage/SkillPageHeaderTemplate";
-
-export const PageWrapper = styled.main`
-    width: calc(100% - 80px);
-`
+import SkillPageMethodology from "../../03-organisms/skillpage/SkillPageMethodology";
 
 const PhotoRetoucher = () => {
     return <>
-        <PageWrapper>
-            <SkillPageHeaderTemplate isPHOTO />
-        </PageWrapper>
+        <SkillPageHeaderTemplate isPHOTO />
+        <SkillPageClients isPHOTO />
+        <SkillPageMethodology isPHOTO />
     </>
 
 };

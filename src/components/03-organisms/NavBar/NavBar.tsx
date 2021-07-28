@@ -5,7 +5,7 @@ import { colorsRoles } from "../../01-atoms/colors";
 import JsLogo from "../../01-atoms/icons/JsLogo";
 import MenuButton from "../../02-molecules/MenuButton/MenuButton";
 import { media } from "../../01-atoms/mediaqueries/MediaQueries";
-import Socials from "./Socials";
+import Socials, { SocialsWrapper } from "./Socials";
 import { animations } from "../../01-atoms/animations/transitions";
 import { GlobalContext } from "../../data/contexts/global/GlobalProvider";
 import { skills } from "../../data/skills/skills-data";
@@ -20,15 +20,10 @@ export const Header = styled.header`
   background-color: ${colorsRoles.DarkGrey2};
   z-index: 10;
 
-  > ul {
+   ${SocialsWrapper} {
     display: none;
   }
 
-   ${media.sm} {
-    > ul {
-      display: flex;
-    }
-  }
 
    ${media.md} {
     position: fixed;
@@ -37,8 +32,9 @@ export const Header = styled.header`
     padding: 4rem 1rem;
     height: 100vh;
     width: fit-content;
-    > ul {
-      flex-direction: column;
+    ${SocialsWrapper} {
+    display: flex;
+    flex-direction: column;
     }
   }
 
@@ -63,7 +59,7 @@ export const LogoLink = styled.a`
 
 const NavBar = () => {
   const HeaderRef = useRef<HTMLTextAreaElement>(null);
-  const { setNavBarSize }  = useContext(GlobalContext);
+  const { navBarSize, setNavBarSize }  = useContext(GlobalContext);
 
   let Location = useLocation();
 
@@ -89,15 +85,18 @@ const NavBar = () => {
     )
   }
 
-  useEffect(() => {
-    
+  const HandleSizeNavBarsize = () => {
     if (HeaderRef.current && window.matchMedia("(min-width: 1025px)").matches) {
       const navBarHeight = HeaderRef.current.clientWidth;
       setNavBarSize(navBarHeight)
     }
+  }
+
+  useEffect(() => {
+    HandleSizeNavBarsize();
     HandleColorChange();
-    
-  });
+  },[navBarSize]);
+
 
   return (
     <>

@@ -1,16 +1,15 @@
-import styled from "styled-components";
+import SkillPageClients from "../../03-organisms/skillpage/SkillPageClients";
 import SkillPageHeaderTemplate from "../../03-organisms/skillpage/SkillPageHeaderTemplate";
+import SkillPageMethodology from "../../03-organisms/skillpage/SkillPageMethodology";
+import SkillPageProjectsDev from "../../03-organisms/skillpage/SkillPageProjectsDev";
 
-export const PageWrapper = styled.main`
-    width: calc(100% - 80px);
-    background-color: red;
-`
 
 const FrontenDeveloper = () => {
     return <>
-        <PageWrapper>
             <SkillPageHeaderTemplate isDEV />
-        </PageWrapper>
+            <SkillPageClients isDEV />
+            <SkillPageMethodology isDEV />
+            <SkillPageProjectsDev />
     </>
 
 };
