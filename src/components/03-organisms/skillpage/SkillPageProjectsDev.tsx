@@ -4,25 +4,33 @@ import { colorsRoles } from "../../01-atoms/colors";
 import media from "../../01-atoms/mediaqueries/MediaQueries";
 import { CreativeDeveloperProjects } from "../../data/skills/projects/dev-projects";
 import SkillPageProjectDevItem from "./SkillPageProjectDevItem";
+import { useContext } from "react";
+import { GlobalContext } from "../../data/contexts/global/GlobalProvider";
 
 
-export const NavCreativeDeveloperProjectsWrapper = styled.section`
+type INavCreativeDeveloperProjectsWrapper = {
+    navBarSize: number;
+}
+
+export const NavCreativeDeveloperProjectsWrapper = styled.section<INavCreativeDeveloperProjectsWrapper>`
 width: 100%;
 background-color: ${colorsRoles.White};
 padding-top: 88px;
 
 ${media.md}{
 padding-top: 0px;
+width: calc(100% - ${props => props.navBarSize}px - 0.5rem);
 }
 
 `;
 
 const SkillPageProjectsDev = () => {
 
+    const { navBarSize }  = useContext(GlobalContext);
     let { url } = useRouteMatch();
 
     return <>
-    <NavCreativeDeveloperProjectsWrapper>
+    <NavCreativeDeveloperProjectsWrapper navBarSize={navBarSize}>
 
     {
             CreativeDeveloperProjects.map((project,index) => (
@@ -34,6 +42,7 @@ const SkillPageProjectsDev = () => {
                 slug={`${url}/${project.slug}`}
                 // Tools={project.madeWith}
                 // TextColor={project.maincolor}
+                bgCTA={project.maincolor}
                 imgsrc={project.thumbnailproject}
                 />
             ))

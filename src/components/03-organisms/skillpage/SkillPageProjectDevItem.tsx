@@ -4,8 +4,8 @@ import styled from "styled-components";
 import { transitions } from "../../01-atoms/animations/transitions";
 import { colorsRoles } from "../../01-atoms/colors";
 import media from "../../01-atoms/mediaqueries/MediaQueries";
-import HeadingSecondary from "../../01-atoms/typography/headings/HeadingSecondary";
-import ParagraphPrimary from "../../01-atoms/typography/paragraphs/ParagraphPrimary";
+import HeadingProject from "../../01-atoms/typography/headings/HeadingProject";
+import ParagraphPrimary, { ParagraphStyle } from "../../01-atoms/typography/paragraphs/ParagraphPrimary";
 import CallToAction from "../../02-molecules/CallToAction/CallToAction";
 import ResponsiveImage from "../../02-molecules/images/ResponsiveImage";
 
@@ -28,6 +28,15 @@ align-items: center;
 
 export const LeftContent = styled.div`
 height: 100%;
+
+${ParagraphStyle} { 
+    margin-bottom: 2rem;
+
+    ${media.sm} {
+        margin-bottom: 3rem;
+    }
+}
+
 `;
 export const LeftSide = styled.div`
 width: 100%;
@@ -191,6 +200,7 @@ type ISkillPageProjectDevItem = {
     slug: string;
     imgsrc: string;
     breakPoint?: number;
+    bgCTA: string;
 }
 
 const SkillPageProjectDevItem:FC <ISkillPageProjectDevItem>= (props) => {
@@ -202,12 +212,12 @@ const SkillPageProjectDevItem:FC <ISkillPageProjectDevItem>= (props) => {
             <LeftSide>
                 <LeftContent>
                         {/* <ParagraphPrimary>{props.fields}</ParagraphPrimary> */}
-                        <HeadingSecondary Positive={true}>
+                        <HeadingProject textCenterM={true} textCenterL={false} Positive={true}>
                             {props.title}
-                        </HeadingSecondary>
-                        <ParagraphPrimary>{props.description}</ParagraphPrimary>
+                        </HeadingProject>
+                        <ParagraphPrimary lightBg={true}>{props.description}</ParagraphPrimary>
                         <CallToAction
-                            background={"white"}
+                            background={props.bgCTA}
                             to={props.slug}
                             label={"See more"}
                             LightText={true}

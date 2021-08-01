@@ -1,5 +1,9 @@
 import { createGlobalStyle } from 'styled-components';
 
+import PoppinsLightItalicWoff from "../assets/fonts/Poppins-LightItalic.woff";
+import PoppinsLightItalicWoff2 from "../assets/fonts/Poppins-LightItalic.woff2";
+import PoppinsLightWoff from "../assets/fonts/Poppins-Light.woff";
+import PoppinsLightWoff2 from "../assets/fonts/Poppins-Light.woff2";
 import PoppinsRegularWoff from "../assets/fonts/Poppins-Regular.woff";
 import PoppinsRegularWoff2 from "../assets/fonts/Poppins-Regular.woff2";
 import PoppinsSemiBoldWoff from "../assets/fonts/Poppins-SemiBold.woff";
@@ -61,6 +65,26 @@ const GlobalStyle = createGlobalStyle`
   }
 
   @font-face {
+    font-family: 'Poppins Light, sans-serif';
+      src: 
+      url('${PoppinsLightWoff}') format('woff'),
+      url('${PoppinsLightWoff2}') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Poppins Light Italic, sans-serif';
+      src: 
+      url('${PoppinsLightItalicWoff}') format('woff'),
+      url('${PoppinsLightItalicWoff2}') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+  }
+
+  @font-face {
     font-family: 'Poppins, sans-serif';
       src: 
       url('${PoppinsRegularWoff}') format('woff'),
@@ -111,6 +135,8 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export const fontsFamilies = {
+    poppinsLightitalic : "'Poppins Light Italic, sans-serif'",
+    poppinsLight : "'Poppins Light, sans-serif'",
     poppinsRegular : "'Poppins, sans-serif'",
     poppinsSemiBold : "'Poppins SemiBold, sans-serif'",
     poppinsBold : "'Poppins Bold, sans-serif'",

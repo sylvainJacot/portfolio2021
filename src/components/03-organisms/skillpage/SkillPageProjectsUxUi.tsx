@@ -129,6 +129,7 @@ const SkillPageProjectsUxUi:FC = () => {
             key={index}
             bgColor={bgColor}
             slug={`${url}/${project.slug}`}
+            to={project.slug}
             title={project.title}
             description={project.description}
             backgroundpicture={project.backgroundpicture}

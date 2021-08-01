@@ -86,8 +86,44 @@ export const TelenetProject = {
     TelenetFolio04 : TelenetFolioImg04,
 }
 
+type Iimage = {
+    srcDesktop: string;
+    srcMobile: string;
+    altImg: string;
+    bgColor: string;
+}
 
-export const UIUXProjects = [
+type Iroles = {
+    titleRole: string;
+    descriptionRole: string;
+}
+
+type IMethodo = {
+    title?: string;
+    altImage?: string;
+    logo?: string;
+}
+
+type IUIUXProjects = 
+    {
+        title?: string;
+        skill?: string;
+        fields?: string;
+        description?: string;
+        roles?: Iroles[];
+        slug?: string;
+        headerImage?: string;
+        decorativeimage?: string;
+        mainColor?: string;
+        FieldTextColorVisible?: string;
+        backgroundpicture?: string;
+        foregroundpicture?: string;
+        methodology?: IMethodo[];
+        images?: Iimage[];
+    }
+
+
+export const UIUXProjects: IUIUXProjects[]= [
     {
         title: "Evergreen",
         skill: "UX/UI Designer",
@@ -100,7 +136,7 @@ export const UIUXProjects = [
             },
             {
                 titleRole: "Role",
-                descriptionRole:"Design the entire platform based on the wireframes provided. Implement atomic components (html/css)",
+                descriptionRole: "Design the entire platform based on the wireframes provided. Implement atomic components (html/css)",
             },
             {
                 titleRole: "Time",
@@ -110,7 +146,7 @@ export const UIUXProjects = [
         slug: "Evergreen",
         headerImage: EvergreenProject.HeaderEvergreen,
         decorativeimage: EvergreenProject.DecoEvergreen,
-        maincolor: projectColors.Evergreen,
+        mainColor: projectColors.Evergreen,
         FieldTextColorVisible: projectColors.Evergreen,
         backgroundpicture: EvergreenProject.EvergreenFirst,
         foregroundpicture: EvergreenProject.Leaves,
@@ -140,22 +176,22 @@ export const UIUXProjects = [
         description: "Samsung is a South Korean electronics company which sells televisions, household appliances and perhaps most notably, mobile devices.",
         roles: [
             {
-                titlerole: "Team",
-                descriptionrole:"4 people",
+                titleRole: "Team",
+                descriptionRole:"4 people",
             },
             {
-                titlerole: "Role",
-                descriptionrole:"The Samsung Members app have got some updates and wants to inform the clients via its website. Plus, retain the audience via monthly newsletters. I had to Keep consistency and design regarding all technical contraints (Samsung guidelines)",
+                titleRole: "Role",
+                descriptionRole:"The Samsung Members app have got some updates and wants to inform the clients via its website. Plus, retain the audience via monthly newsletters. I had to Keep consistency and design regarding all technical contraints (Samsung guidelines)",
             },
             {
-                titlerole: "Time",
-                descriptionrole:"Around 3 months",
+                titleRole: "Time",
+                descriptionRole:"Around 3 months",
             },
         ],
         slug: "Samsung",
         headerImage: SamsungProject.SamsungHeader,
         decorativeimage: SamsungProject.SamsungDeco,
-        maincolor: projectColors.Samsung,
+        mainColor: projectColors.Samsung,
         backgroundpicture: SamsungProject.Samsungfirst,
         foregroundpicture: SamsungProject.SamsungStar,
         FieldTextColorVisible: colorsRoles.White,
@@ -196,22 +232,22 @@ export const UIUXProjects = [
         description: "Kia Motors Corporation is a South Korean multinational automotive manufacturer headquartered in Seoul. ",
         roles: [
             {
-                titlerole: "Team",
-                descriptionrole:"3 people",
+                titleRole: "Team",
+                descriptionRole:"3 people",
             },
             {
-                titlerole: "Role",
-                descriptionrole:"I had to create/imagine a landing page and advertising posters for the promotion of the new Kia SUV's. I had to retouch the car's pictures as well ",
+                titleRole: "Role",
+                descriptionRole:"I had to create/imagine a landing page and advertising posters for the promotion of the new Kia SUV's. I had to retouch the car's pictures as well ",
             },
             {
-                titlerole: "Time",
-                descriptionrole:"Around 1 week",
+                titleRole: "Time",
+                descriptionRole:"Around 1 week",
             },
         ],
         slug: "Kia",
         headerImage: KiaProject.KiaHeader,
         decorativeimage: KiaProject.KiaDeco,
-        maincolor: projectColors.Kia,
+        mainColor: projectColors.Kia,
         backgroundpicture: KiaProject.KiaFirst,
         foregroundpicture: KiaProject.KiaWheel,
         FieldTextColorVisible: projectColors.Kia,
@@ -253,22 +289,22 @@ export const UIUXProjects = [
         description: " Telenet specialises in the supply of broadband internet, fixed and mobile telephony services and cable television to customers throughout Flanders and Brussels over a powerful HFC (hybrid fibre-coax) network",
         roles: [
             {
-                titlerole: "Team",
-                descriptionrole:"2 people",
+                titleRole: "Team",
+                descriptionRole:"2 people",
             },
             {
-                titlerole: "Role",
-                descriptionrole:"Create an interface in order to present the concept of the Digicovers (custom adhesive sheets that cover client's Digicorder). And create the home page in order to promote the \"Signal switch\".",
+                titleRole: "Role",
+                descriptionRole:"Create an interface in order to present the concept of the Digicovers (custom adhesive sheets that cover client's Digicorder). And create the home page in order to promote the \"Signal switch\".",
             },
             {
-                titlerole: "Time",
-                descriptionrole:"Around 3 weeks",
+                titleRole: "Time",
+                descriptionRole:"Around 3 weeks",
             },
         ],
         slug: "Telenet",
         headerImage: TelenetProject.TelenetHeader,
         decorativeimage:  TelenetProject.TelenetDeco,
-        maincolor: projectColors.Telenet,
+        mainColor: projectColors.Telenet,
         backgroundpicture:  TelenetProject.Telenetfirst,
         foregroundpicture:  TelenetProject.TelenetSignal,
         FieldTextColorVisible: projectColors.Telenet,

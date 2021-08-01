@@ -25,133 +25,141 @@ import GraphicTabletLogo from "../../assets/images/icones/methodology/GraphicTab
 import CrossBrowsersTestingLogo from "../../assets/images/icones/methodology/CrossBrowser.svg";
 import CodeSandBoxLogo from "../../assets/images/icones/methodology/code-sandbox.svg";
 
-export const Sketch = {
+
+type IIconMethodo = {
+    title?: string;
+    altImage?: string;
+    logo?: string;
+}
+
+
+export const Sketch: IIconMethodo = {
     title: "Sketch",
     altImage: "Sketch logo",
     logo: SketchLogo,
 }
-export const AtomicDesign = {
+export const AtomicDesign : IIconMethodo= {
     title: "Atomic design",
     altImage: "Atomic design logo",
     logo: AtomicDesignLogo,
 }
-export const RawSketch = {
+export const RawSketch : IIconMethodo= {
     title: "Raw sketch",
     altImage: "Raw sketch logo",
     logo: RawSketchLogo,
 }
-export const Invision = {
+export const Invision : IIconMethodo= {
     title: "Invision",
     altImage: "Invision logo",
     logo: InvisionLogo,
 }
-export const StyledComponents = {
+export const StyledComponents : IIconMethodo= {
     title: "Styled components",
     altImage: "Styled components logo",
     logo: StyledComponentsLogo,
 }
-export const Html5 = {
+export const Html5 : IIconMethodo= {
     title: "Html 5",
     altImage: "Html 5 logo",
     logo: Html5Logo,
 }
-export const ReactJs = {
+export const ReactJs : IIconMethodo= {
     title: "ReactJS",
     altImage: "React logo",
     logo: ReactLogo,
 }
-export const Zeplin = {
+export const Zeplin : IIconMethodo= {
     title: "Zeplin",
     altImage: "Zeplin logo",
     logo: ZeplinLogo,
 }
-export const PixelPerfect = {
+export const PixelPerfect : IIconMethodo= {
     title: "Pixel Perfect",
     altImage: "Pixel Perfect logo",
     logo: PixelPerfectLogo,
 }
-export const Trello = {
+export const Trello : IIconMethodo= {
     title: "Trello",
     altImage: "Trello logo",
     logo: TrelloLogo,
 }
-export const Agile = {
+export const Agile : IIconMethodo= {
     title: "Agile scrum process",
     altImage: "Agile scrum process logo",
     logo: AgileMethodoLogo,
 }
-export const Sass = {
+export const Sass : IIconMethodo= {
     title: "Sass",
     altImage: "Sass logo",
     logo: SassLogo,
 }
-export const SamsungGuidelines = {
+export const SamsungGuidelines : IIconMethodo= {
     title: "Samsung Guidelines",
     altImage: "Samsung Guidelines logo",
     logo: SamsungGuidelinesLogo,
 }
-export const Photoshop = {
+export const Photoshop : IIconMethodo= {
     title: "Photoshop",
     altImage: "Photoshop logo",
     logo: PhotoshopLogo,
 }
-export const Principle = {
+export const Principle : IIconMethodo= {
     title: "Principle",
     altImage: "Principle logo",
     logo: PrincipleLogo,
 }
-export const ResponsiveDesign = {
+export const ResponsiveDesign : IIconMethodo= {
     title: "Responsive Design",
     altImage: "Responsive Design logo",
     logo: ResponsiveDesignLogo,
 }
-export const Git = {
+export const Git : IIconMethodo= {
     title: "Git",
     altImage: "Git logo",
     logo: GitLogo,
 }
-export const Bootsrap = {
+export const Bootsrap : IIconMethodo= {
     title: "Bootsrap",
     altImage: "Bootsrap logo",
     logo: BootstrapLogo,
 }
-export const CSS3 = {
+export const CSS3 : IIconMethodo= {
     title: "CSS3",
     altImage: "CSS3 logo",
     logo: Css3Logo,
 }
-export const Javascript = {
+export const Javascript : IIconMethodo= {
     title: "Javascript",
     altImage: "Javascript logo",
     logo: JavascriptLogo,
 }
-export const CoffeeBreak = {
+export const CoffeeBreak : IIconMethodo= {
     title: "Coffee Break",
     altImage: "Coffee Break logo",
     logo: CoffeeBreakLogo,
 }
-export const Streching = {
+export const Streching : IIconMethodo= {
     title: "Streching",
     altImage: "Streching logo",
     logo: StretchingLogo,
 }
-export const LightRoom = {
+export const LightRoom : IIconMethodo= {
     title: "LightRoom",
     altImage: "LightRoom logo",
     logo: LightRoomLogo,
 }
-export const GraphicTablet = {
+export const GraphicTablet : IIconMethodo= {
     title: "Graphic Tablet",
     altImage: "Graphic Tablet logo",
     logo: GraphicTabletLogo,
 }
-export const CrossBrowsersTesting = {
+export const CrossBrowsersTesting : IIconMethodo= {
     title: "Cross Browsers Testing",
     altImage: "Cross Browsers Testing logo",
     logo: CrossBrowsersTestingLogo,
 }
 
-export const CodeSandBox = {
+export const CodeSandBox : IIconMethodo= {
     title: "CodeSandBox",
     altImage: "CodeSandBox logo",
     logo: CodeSandBoxLogo,

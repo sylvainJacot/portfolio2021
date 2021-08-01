@@ -1,20 +1,25 @@
-import { FC } from "react";
+import { FC, useContext } from "react";
 import styled from "styled-components";
 import Parallax from "react-rellax";
 import { transitions } from "../../01-atoms/animations/transitions";
 import { colorsRoles } from "../../01-atoms/colors";
 import media from "../../01-atoms/mediaqueries/MediaQueries";
-import HeadingSecondary from "../../01-atoms/typography/headings/HeadingSecondary";
 import ParagraphPrimary from "../../01-atoms/typography/paragraphs/ParagraphPrimary";
 import CallToAction from "../../02-molecules/CallToAction/CallToAction";
 import ResponsiveImage from "../../02-molecules/images/ResponsiveImage";
 import HeadingProject from "../../01-atoms/typography/headings/HeadingProject";
+import ParagraphTopTitle from "../../01-atoms/typography/paragraphs/ParagraphTopTitle";
+import { GlobalContext } from "../../data/contexts/global/GlobalProvider";
 
 type IRightSide = {
     bgColor: string;
 };
 
-export const Box = styled.section`
+type IBox = {
+  navBarSize : number;
+}
+
+export const Box = styled.section<IBox>`
   position: relative;
   width: 100%;
   height: 640px;
@@ -25,6 +30,7 @@ export const Box = styled.section`
   ${media.md} {
     height: 880px;
     flex-direction: row;
+    width: calc(100% - ${props => props.navBarSize}px - 0.5rem);
   }
 `;
 export const LeftContent = styled.div`
@@ -77,7 +83,7 @@ height: 100%;
 
 & ${BackGroundPic} {
 position: absolute;
-top: 80%;
+top: 70%;
 right: 50%;
 transform: translate(50%,50%);
 
@@ -92,9 +98,12 @@ right: 50%;
 }
 
 ${media.md}{
-top: 55%;
+top: 65%;
 right: 64%;
 transform: translate(50%,-50%);
+}
+${media.lg}{
+right: 74%;
 }
 
 & img {
@@ -122,7 +131,7 @@ width: 700px;
 & ${ForeGroundPic} {
     position: absolute;
     left: 0;
-    top: 280%;
+    top: 100%;
     transform: translate(50%,-50%);
     
     ${media.xs}{
@@ -163,36 +172,40 @@ width: 700px;
 `;
 
 type ISkillPageProjectUxUiItem = {
-    fields: any;
-    title: string;
-    description: string;
-    slug: string;
-    bgColor: string;
-    backgroundpicture: string;
-    foregroundpicture: string;
+    fields?: string;
+    title?: string;
+    description?: string;
+    slug?: string;
+    bgColor?: string;
+    backgroundpicture?: string;
+    foregroundpicture?: string;
+    to?: string;
 };
 
-const SkillPageProjectUxUiItem: FC<ISkillPageProjectUxUiItem> = (props) => {
+const SkillPageProjectUxUiItem: FC<ISkillPageProjectUxUiItem> = ({fields, title, description,slug, ...props}) => {
+
+  const { navBarSize }  = useContext(GlobalContext);
+
     return (
         <>
-            <Box>
+            <Box navBarSize={navBarSize}>
                 <LeftSide>
                     <LeftContent>
-                        <ParagraphPrimary>{props.fields}</ParagraphPrimary>
-                        <HeadingProject Positive={false}>
-                            {props.title}
+                        <ParagraphTopTitle>{fields}</ParagraphTopTitle>
+                        <HeadingProject textCenterM={true} textCenterL={false} Positive={false}>
+                            {title}
                         </HeadingProject>
-                        <ParagraphPrimary>{props.description}</ParagraphPrimary>
+                        <ParagraphPrimary marginM={"0 0 2rem 0"}>{description}</ParagraphPrimary>
                         <CallToAction
-                            background={"white"}
-                            to={props.slug}
+                            background={colorsRoles.White}
+                            to={slug!} // the exclamation mark here, it's the Non-null assertion operator that  tells TypeScript that even though something looks like it could be null, it can trust you that it's not
                             label={"See more"}
-                            LightText={true}
+                            LightText={false}
                         />
                     </LeftContent>
                 </LeftSide>
 
-                <RightSide bgColor={props.bgColor}>
+                <RightSide bgColor={props.bgColor!}>  
                     <BackGroundPic>
                         <Parallax speed={2} percentage={0}>
                             <ResponsiveImage srcMobile={props.backgroundpicture} />
@@ -211,3 +224,4 @@ const SkillPageProjectUxUiItem: FC<ISkillPageProjectUxUiItem> = (props) => {
 };
 
 export default SkillPageProjectUxUiItem;
+

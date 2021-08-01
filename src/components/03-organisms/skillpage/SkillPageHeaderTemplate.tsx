@@ -7,7 +7,7 @@ import Row from '../../01-atoms/layout/Row';
 import media from '../../01-atoms/mediaqueries/MediaQueries';
 import { skills } from "../../data/skills/skills-data";
 import HeadingPrimary from '../../01-atoms/typography/headings/HeadingPrimary';
-import { Paragraph } from '../../01-atoms/typography/paragraphs/ParagraphPrimary';
+import { ParagraphStyle } from '../../01-atoms/typography/paragraphs/ParagraphPrimary';
 
 
 type ISkillProps = {
@@ -50,7 +50,7 @@ export const HeaderPictureWrapper = styled(Row)`
     }
 `;
 
-export const ParagraphPrimaryStyled = styled(Paragraph)`
+export const ParagraphPrimaryStyled = styled(ParagraphStyle)`
     margin-top: 2rem;
     display: inline-block;
 `

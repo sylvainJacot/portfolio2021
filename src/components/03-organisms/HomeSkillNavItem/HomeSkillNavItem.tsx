@@ -5,7 +5,7 @@ import { colorsRoles, gradients } from "../../01-atoms/colors";
 import { media } from "../../01-atoms/mediaqueries/MediaQueries";
 import { transitions } from "../../01-atoms/animations/transitions";
 import HeadingPrimary from "../../01-atoms/typography/headings/HeadingPrimary";
-import { Paragraph } from "../../01-atoms/typography/paragraphs/ParagraphPrimary";
+import { ParagraphStyle } from "../../01-atoms/typography/paragraphs/ParagraphPrimary";
 
 type Props = {
   Titre: string;
@@ -25,7 +25,7 @@ type StyledContent = {
   Color: string;
 };
 
-export const ParagraphPrimaryStyled = styled(Paragraph)`
+export const ParagraphPrimaryStyled = styled(ParagraphStyle)`
   margin: 2rem 0 1rem 0;
 `
 
