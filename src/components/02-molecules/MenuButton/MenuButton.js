@@ -1,0 +1,31 @@
+import {useContext} from "react";
+import styled from "styled-components";
+import { colorsRoles } from "../../01-atoms/colors";
+import { GlobalContext } from "../../data/contexts/global/GlobalProvider";
+
+export const Wrapper = styled.button`
+    width: 3rem;
+    height: 3rem;
+    background-color: ${colorsRoles.White_10};
+    border-radius: 0.5rem;
+`;
+
+const MenuButton = () => {
+
+    const {aboutPageHidden, setAboutPageHidden} = useContext(GlobalContext)
+
+    const handleToggleAboutPage = () => {
+        setAboutPageHidden(!aboutPageHidden);
+    }
+
+
+    return <>
+        <Wrapper aria-label="menu" onClick={handleToggleAboutPage}>
+            Hello
+        </Wrapper>
+    </>
+
+};
+
+export default MenuButton;
+
