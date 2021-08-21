@@ -1,6 +1,7 @@
 
 import { useContext } from "react";
 import styled from "styled-components";
+import { gridSideMargins } from "../../01-atoms/layout/Grid";
 import media, { size } from "../../01-atoms/mediaqueries/MediaQueries";
 import { GlobalContext } from "../../data/contexts/global/GlobalProvider";
 import ProjectItemImageContent from "./ProjectItemImageContent";
@@ -15,9 +16,10 @@ export const ImageProjectsWrapper = styled.div`
 
     ${media.md} {
         width: calc(100% - ${({navBarSize}) => navBarSize}px);
+        padding: 8rem ${gridSideMargins.md};
     }
     ${media.lg} {
-        padding: 8rem 0;
+        padding: 8rem ${gridSideMargins.lg};
     }
 `;
 

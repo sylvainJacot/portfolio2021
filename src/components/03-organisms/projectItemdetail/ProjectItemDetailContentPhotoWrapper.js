@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import styled from "styled-components";
+import { gridSideMargins } from "../../01-atoms/layout/Grid";
 import media from "../../01-atoms/mediaqueries/MediaQueries";
 import { GlobalContext } from "../../data/contexts/global/GlobalProvider";
 import ProjectItemDetailContentPhotoItem from "./ProjectItemDetailContentPhotoItem";
@@ -15,6 +16,12 @@ justify-content: center;
 ${media.md} {
     width: calc(100% - ${({navBarSize}) => navBarSize}px);
     margin: unset;
+    padding: 0px ${gridSideMargins.md};
+}
+${media.lg} {
+    width: calc(100% - ${({navBarSize}) => navBarSize}px);
+    margin: unset;
+    padding: 0px ${gridSideMargins.lg};
 }
 `;
 

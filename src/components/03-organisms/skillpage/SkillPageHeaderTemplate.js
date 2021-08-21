@@ -1,14 +1,11 @@
-import { useContext } from 'react';
 import styled from "styled-components";
 import { colorsRoles, gradients } from '../../01-atoms/colors';
 import { GridWrapper } from '../../01-atoms/layout/Grid';
-import { GlobalContext } from '../../data/contexts/global/GlobalProvider';
 import Row from '../../01-atoms/layout/Row';
 import media from '../../01-atoms/mediaqueries/MediaQueries';
 import { skills } from "../../data/skills/skills-data";
 import HeadingPrimary from '../../01-atoms/typography/headings/HeadingPrimary';
 import { ParagraphStyle } from '../../01-atoms/typography/paragraphs/ParagraphPrimary';
-import BackButton from "../../02-molecules/CallToAction/BackButton"
 
 
 
@@ -80,7 +77,7 @@ const SkillPageHeaderTemplate  = ({isUXUI,isDEV,isPHOTO}) => {
     return <>
 
         <Headerstyle>
-        <BackButton />
+
         <HeaderWrapper>
 
                     <HeaderPictureWrapper

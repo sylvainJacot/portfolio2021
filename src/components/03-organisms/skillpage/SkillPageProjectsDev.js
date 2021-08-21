@@ -5,8 +5,6 @@ import { colorsRoles } from "../../01-atoms/colors";
 import media from "../../01-atoms/mediaqueries/MediaQueries";
 import { CreativeDeveloperProjects } from "../../data/skills/projects/dev-projects";
 import SkillPageProjectDevItem from "./SkillPageProjectDevItem";
-import { useContext } from "react";
-import { GlobalContext } from "../../data/contexts/global/GlobalProvider";
 
 
 

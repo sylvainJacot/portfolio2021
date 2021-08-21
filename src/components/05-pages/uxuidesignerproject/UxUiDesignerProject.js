@@ -1,4 +1,5 @@
 
+import {useEffect} from "react";
 import BackButton from "../../02-molecules/CallToAction/BackButton"
 import ProjectItemDetailHeader from "../../03-organisms/projectItemdetail/ProjectItemDetailHeader"
 import ProjectItemDetailImageDivider from "../../03-organisms/projectItemdetail/ProjectItemDetailImageDivider";
@@ -11,6 +12,10 @@ const UxUiDesignerProject = ({match}) => {
 
 
     const Project = UIUXProjects.find(({ slug }) => slug === match.params.slug);
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    })
 
     return <>
     <BackButton />

@@ -5,18 +5,19 @@ import { devClients, photoClients, uiuxClients } from "../../data/skills/skills-
 import  { HeadingSecondaryStyle } from "../../01-atoms/typography/headings/HeadingSecondary";
 import media from "../../01-atoms/mediaqueries/MediaQueries";
 import { colorsRoles } from "../../01-atoms/colors";
+import { gridSideMargins } from "../../01-atoms/layout/Grid";
 
 export const Wrapper = styled(Row)`
-    padding: 5rem 0;
+    padding: 5rem ${gridSideMargins.xs};
     background-color: ${colorsRoles.LightGrey};
     ${media.sm} {
-    padding: 6rem 0;
+    padding: 6rem ${gridSideMargins.sm};
     }
     ${media.md} {
-    padding: 8rem 0;
+    padding: 8rem ${gridSideMargins.md};
     }
     ${media.lg} {
-    padding: 9rem 0;
+    padding: 9rem ${gridSideMargins.lg};
     }
 `;
 
@@ -45,7 +46,6 @@ const SkillPageClients = ({isUXUI,isDEV,isPHOTO}) => {
             StartLg={4}
             EndLg={19}
             >
-
                 <HeadingSecondaryStyled Positive={true}>I collaborated with</HeadingSecondaryStyled>
 
                 <HeaderClients>

@@ -1,6 +1,6 @@
-import { useRef } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { transitions } from "../../01-atoms/animations/transitions";
 import { colorsRoles } from "../../01-atoms/colors";
 import { fontsFamilies } from "../../01-atoms/GlobalStyle";
 import { media } from "../../01-atoms/mediaqueries/MediaQueries";
@@ -22,34 +22,48 @@ export const Wrapper = styled(NavLink)`
   z-index: 1;
   text-align: center;
 
+  > span {
+    display: inline-block;
+    z-index: 2;
+    transition: ${transitions.easeOut2ms};
+  }
+
  ${media.sm} {
    width: fit-content;;
   font-size: 1rem;
   padding: 1rem 2rem;
   text-align: left;
-}
+  }
+  ${media.sm} {
+    &:after {
+      position: absolute;
+      display: block;
+      content: "";
+      background-color: ${colorsRoles.DarkGrey2};
+      width: 110%;
+      height: 160px;
+      border-radius: 50%;
+      top: 240%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      z-index: -1;
+      opacity: 0.1;
+    }
+    &:hover {
+        > span {
+          transform: translateY(-0.25rem);
+          transition: ${transitions.easeOut2ms};
+    
+        }
+        &:after {
+        top:50%;
+        transition: ${transitions.easeOut3ms};
+        }
+    }
+  }
 
   `
 
-export const Circle = styled.div`
-  display: block;
-  position: absolute;
-  transform: scale(1);
-  width: 30px;
-  height: 30px;
-  background: white;
-  border-radius: 50%;
-  left: 0;
-  top: 0;
-  animation: ripple 600ms ease-out;
-  @keyframes ripple {
-  to {
-    transform: scale(4);
-    opacity: 0;
-  }
-}
-
-`;
 
 
 const CallToAction = ({
@@ -58,30 +72,12 @@ const CallToAction = ({
   background,
   LightText,
 }) => {
-    const buttonRef = useRef();
-    const circleRef = useRef();
 
-    // MouseEvent
-    const createRipple = (event) => {
-        if(circleRef.current) {
-            event.preventDefault();
-            const buttonTarget = event.currentTarget;
-            const buttonHeight = buttonTarget.clientHeight;
-            const buttonWidth = buttonTarget.clientWidth;
-            const diameter = Math.max(buttonWidth, buttonHeight);
-            const radius = diameter / 2;  
-            circleRef.current.style.height = `${diameter}px`;
-            circleRef.current.style.left = `${event.clientX - buttonTarget.offsetLeft - radius}px`;
-            circleRef.current.style.top = `${event.clientY - buttonTarget.offsetTop - radius}px`;
-            console.log(buttonHeight, buttonWidth)
-        }
-    }
 
   return (
     <>
-      <Wrapper ref={buttonRef} onClick={createRipple} to={to} background={background} LightText={LightText}>
-        {label}
-        {/* <Circle ref={circleRef}/> */}
+      <Wrapper to={to} background={background} LightText={LightText}>
+        <span>{label}</span>
       </Wrapper>
     </>
   );

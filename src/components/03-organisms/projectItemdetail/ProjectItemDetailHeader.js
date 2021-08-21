@@ -29,20 +29,14 @@ width: calc(100% - ${props => props.navBarSize}px);
 & picture {
 width: 80%;
 height: 100%;
-transition: ${transitions.easeIn3ms};
--webkit-animation: ${transitions.easeIn3ms};
--moz-animation: ${transitions.easeIn3ms};
--o-animation:${transitions.easeIn3ms};
+transition: ${transitions.easeOut2ms};
 display: flex;
 justify-content: center;
 align-items: center;
 
 &:hover {
-transform: scale(.9);
-transition: ${transitions.easeIn3ms};
--webkit-animation: ${transitions.easeIn3ms};
--moz-animation: ${transitions.easeIn3ms};
--o-animation: ${transitions.easeIn3ms};
+transform: scale(1.01);
+transition: ${transitions.easeOut2ms};
 }
 
 ${media.md}{

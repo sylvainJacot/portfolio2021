@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { GlobalContext } from "../../data/contexts/global/GlobalProvider";
 import { media } from "../mediaqueries/MediaQueries";
 
+
 export const colSizes = {
     lg : '3.5rem',
     md : '2.5rem',
@@ -26,10 +27,10 @@ export const gridFullWidth = {
 }
 
 export const gridSideMargins = {
-    xs : `calc((100% - ${gridFullWidth.xs}) / 2)` ,
-    sm : `calc((100% - ${gridFullWidth.sm}) / 2)` ,
-    md : `calc((100% - ${gridFullWidth.md}) / 2)` ,
-    lg : `calc((100% - ${gridFullWidth.lg}) / 2)` ,
+    xs : `calc((100% - (${gridFullWidth.xs})) / 2)` ,
+    sm : `calc((100% - (${gridFullWidth.sm})) / 2)` ,
+    md : `calc(((100% - (${gridFullWidth.md})) / 2) - 40px)` ,
+    lg : `calc(((100% - (${gridFullWidth.lg})) / 2) - 40px)` ,
 }
 
 

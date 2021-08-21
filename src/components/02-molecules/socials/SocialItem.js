@@ -1,7 +1,6 @@
 
 
 
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { animations } from "../../01-atoms/animations/transitions";
 import { media } from "../../01-atoms/mediaqueries/MediaQueries";
@@ -29,9 +28,9 @@ const SocialItem = ({children, to}) => {
   return (
     <>
       <SocialItemWrapper>
-            <Link to={to} target="_blank">
+            <a href={to} target="_blank" rel="noreferrer">
                 {children}
-            </Link>
+            </a>
       </SocialItemWrapper>
     </>
   );

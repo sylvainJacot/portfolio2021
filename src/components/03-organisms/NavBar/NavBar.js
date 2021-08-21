@@ -27,7 +27,9 @@ export const Header = styled.header`
    ${SocialsWrapper} {
     display: none;
   }
-
+  ${media.sm} {
+    padding: 1rem ${gridSideMargins.sm} ;
+  }
 
    ${media.md} {
     right: 0;
@@ -126,7 +128,7 @@ const NavBar = () => {
             darkNavBar={darkNavBar}
           />
         </LogoLink>
-        <MenuButton />
+        <MenuButton darkNavBar={darkNavBar}/>
         <Socials darkNavBar={darkNavBar}/>
       </Header>
     </>

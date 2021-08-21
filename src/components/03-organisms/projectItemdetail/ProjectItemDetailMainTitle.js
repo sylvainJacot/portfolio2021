@@ -2,6 +2,7 @@
 import { useContext } from "react";
 import styled from "styled-components";
 import { colorsRoles } from "../../01-atoms/colors";
+import { gridSideMargins } from "../../01-atoms/layout/Grid";
 import media from "../../01-atoms/mediaqueries/MediaQueries";
 import { HeadingProjectStyle } from "../../01-atoms/typography/headings/HeadingProject";
 import { GlobalContext } from "../../data/contexts/global/GlobalProvider";
@@ -36,7 +37,10 @@ margin-top: 3rem;
     };
 
     ${media.md} {
-        
+        padding: 0px ${gridSideMargins.md};
+    }
+    ${media.lg} {
+        padding: 0px ${gridSideMargins.lg};
     }
 
 `;

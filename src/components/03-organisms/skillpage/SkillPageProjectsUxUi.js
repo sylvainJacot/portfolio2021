@@ -22,11 +22,11 @@ const SkillPageProjectsUxUi = () => {
     const handleScroll = () => {
 
         let MediaQueryDesktop = window.matchMedia("(max-width: 1024px)")
-        let lastScrollY = window.pageYOffset + 320;
+        let lastScrollY = window.pageYOffset + 600;
         let lastScrollYDesktop = lastScrollY + 160;
         
-        const NavProjectItemHeightDesktop = 880;
-        const NavProjectItemHeightMobile = 825;
+        const NavProjectItemHeightDesktop = 1080;
+        const NavProjectItemHeightMobile = 865;
 
         const Bg1 = projectColors.Evergreen;
         const Bg2 = projectColors.Samsung;

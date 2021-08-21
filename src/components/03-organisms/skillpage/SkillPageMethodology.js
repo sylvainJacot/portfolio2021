@@ -1,12 +1,12 @@
 
 import styled from "styled-components";
-import { GridWrapper } from "../../01-atoms/layout/Grid";
+import { gridSideMargins } from "../../01-atoms/layout/Grid";
 import Row from "../../01-atoms/layout/Row";
 import { devMethodo, photoMethodo, uiuxMethodo } from "../../data/skills/skills-data";
 import {HeadingSecondaryStyle} from "../../01-atoms/typography/headings/HeadingSecondary"
 import media from "../../01-atoms/mediaqueries/MediaQueries";
+import MethodoIcon from "../../02-molecules/methodoicon/MethodoIcon";
 import { colorsRoles } from "../../01-atoms/colors";
-import MethodoIcon from "../../02-molecules/clientsicons/ClientIcon";
 
 export const MethodoIconsWrapper = styled(Row)`
     display: flex;
@@ -17,33 +17,28 @@ export const MethodoIconsWrapper = styled(Row)`
     }
 `
 
-export const Wrapper = styled(GridWrapper)`
-    padding: 5rem 0;
+export const Wrapper = styled.section`
+    padding: 5rem ${gridSideMargins.xs};
+    ${media.sm} {
+        padding: 5rem ${gridSideMargins.sm};
+    }
     ${media.md} {
-    padding: 8rem 0;
+    padding: 8rem ${gridSideMargins.md};
     }
     ${media.lg} {
-    padding: 9rem 0;
+    padding: 9rem ${gridSideMargins.lg};
     }
 `;
 
 export const HeadingSecondaryStyled = styled(HeadingSecondaryStyle)`
-    margin: 2rem 0;
+    margin: 2rem auto;
 `
 
-const SkillPageMethodology = ({isUXUI,isDEV,isPHOTO}) => {
+const SkillPageMethodology = ({isUXUI,isDEV,isPHOTO,mainCol}) => {
 
     return <>
 
             <Wrapper>
-                <Row
-                    StartSm={3}
-                    EndSm={16}
-                    StartMd={4}
-                    EndMd={19}
-                    StartLg={4}
-                    EndLg={19}
-                >
             <HeadingSecondaryStyled Positive={true}>Methodo</HeadingSecondaryStyled>
                 <MethodoIconsWrapper>
                         {
@@ -51,6 +46,8 @@ const SkillPageMethodology = ({isUXUI,isDEV,isPHOTO}) => {
                             <MethodoIcon 
                             key={index}
                             src={item.MethodoLogo}
+                            mainCol={colorsRoles.uiCol}
+                            MethodoLabel={item.MethodoName}
                             />
                                         
                             )
@@ -60,6 +57,9 @@ const SkillPageMethodology = ({isUXUI,isDEV,isPHOTO}) => {
                             <MethodoIcon 
                             key={index}
                             src={item.MethodoLogo}
+                            mainCol={colorsRoles.frontCol}
+                            isLightText={true}
+                            MethodoLabel={item.MethodoName}
                             />
                             )
                         }
@@ -68,11 +68,12 @@ const SkillPageMethodology = ({isUXUI,isDEV,isPHOTO}) => {
                             <MethodoIcon 
                             key={index}
                             src={item.MethodoLogo}
+                            mainCol={colorsRoles.retouchCol}
+                            MethodoLabel={item.MethodoName}
                             />
                             )
                         }
                 </MethodoIconsWrapper>
-                </Row>
             </Wrapper>
     </>
 

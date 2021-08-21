@@ -1,4 +1,3 @@
-import { useContext } from "react";
 import styled from "styled-components";
 import Parallax from "react-rellax";
 import { transitions } from "../../01-atoms/animations/transitions";
@@ -9,7 +8,6 @@ import CallToAction from "../../02-molecules/CallToAction/CallToAction";
 import ResponsiveImage from "../../02-molecules/images/ResponsiveImage";
 import HeadingProject from "../../01-atoms/typography/headings/HeadingProject";
 import ParagraphTopTitle from "../../01-atoms/typography/paragraphs/ParagraphTopTitle";
-import { GlobalContext } from "../../data/contexts/global/GlobalProvider";
 
 
 export const Box = styled.section`
@@ -85,12 +83,12 @@ height: 100%;
 
 & ${BackGroundPic} {
 position: absolute;
-top: 200%;
+top: 70%;
 right: 50%;
 transform: translate(50%,50%);
 
 ${media.sm}{
-top:88%;
+top:60%;
 }
 
 ${media.md}{
@@ -99,7 +97,7 @@ right: 58%;
 transform: translate(50%,-50%);
 }
 ${media.lg}{
-  top: 56%;
+  top: 70%;
 right: 60%;
 }
 
@@ -125,25 +123,21 @@ right: 60%;
 & ${ForeGroundPic} {
     position: absolute;
     left: -24px;
-    top: 100%;
+    top: 160%;
     transform: translate(50%,-50%);
     
-    ${media.xs}{
-    left: 64px;
-    top: 250%;
-    }
     
      ${media.sm}{
     left: 0;
-    top: 200%;
+    top: 160%;
     }
     
     ${media.md}{
      left: -32%;
-     top: 50%;
+     top: 70%;
     }
     ${media.lg}{
-     top: 100%;
+     top: 90%;
     }
     
       & img {
@@ -170,6 +164,7 @@ right: 60%;
 
 
 const SkillPageProjectUxUiItem = ({fields, title, description,slug, ...props}) => {
+
 
     return (
         <>

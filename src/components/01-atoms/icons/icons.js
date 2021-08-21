@@ -1,5 +1,8 @@
 // Global
 import IcArrow from "../../assets/images/icones/arrow.svg";
+import IcResume from "../../assets/images/icones/Resume.svg";
+import IcEmail from "../../assets/images/icones/email.svg";
+import IcJsLogo from "../../assets/images/icones/js-logo.svg";
 
 // Socials
 import IcGitHub from "../../assets/images/icones/github.svg";
@@ -78,6 +81,9 @@ const icons = {
     GraphicTablet : IcGraphicTablet,
     CrossBrowsers : IcCrossBrowsers,
     CodeSandBoxe : IcCodeSandBoxe,
+    Resume : IcResume,
+    Email : IcEmail,
+    JsLogo : IcJsLogo
 }
 
 export default icons;

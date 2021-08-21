@@ -45,14 +45,19 @@ position: relative;
 display: flex;
 flex-direction: column;
 align-items: center;
-width: 320px;
+width: 100%;
+max-width: 400px;
 height: auto;
-margin: 40px;
 background-color: grey;
 box-shadow: ${shadows.shadowPicture};
 overflow: hidden;
 border-radius: 0.5rem;
 transition: ${transitions.easeOut3ms};
+transform: translateY(0);
+
+${media.md} {
+    max-width: unset;
+}
 
 &:hover {
   ${media.md}{
@@ -74,19 +79,21 @@ transition: ${transitions.easeOut3ms};
    }
 
    img {
-       transform: scale(1.05);
+       transform: scale(1.1);
        transition: ${transitions.easeOut3ms};
    }
 
     }
 }
-    & img {
-        width: 100%;
-        min-height: 100%;
-        object-fit: cover;
-        transition: ${transitions.easeOut3ms};
-        z-index: 10;
-    }
+
+& img {
+    width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    transition: ${transitions.easeOut3ms};
+    z-index: 10;
+    transform: scale(1.05);
+}
 
 `;
 

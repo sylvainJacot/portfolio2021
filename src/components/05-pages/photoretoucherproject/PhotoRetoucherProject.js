@@ -1,6 +1,6 @@
+import { useEffect } from "react";
 import BackButton from "../../02-molecules/CallToAction/BackButton"
 import ProjectItemDetailHeader from "../../03-organisms/projectItemdetail/ProjectItemDetailHeader"
-import ProjectItemDetailImageDivider from "../../03-organisms/projectItemdetail/ProjectItemDetailImageDivider";
 import ProjectItemDetailMainTitle from "../../03-organisms/projectItemdetail/ProjectItemDetailMainTitle";
 import ProjectItemDetailContentPhotoWrapper from "../../03-organisms/projectItemdetail/ProjectItemDetailContentPhotoWrapper";
 import { PhotoRetoucherProjects } from "../../data/skills/projects/photo-projects";
@@ -9,6 +9,10 @@ import { PhotoRetoucherProjects } from "../../data/skills/projects/photo-project
 const PhotoRetoucherProject = ({match}) => {
 
     const Project = PhotoRetoucherProjects.find(({ slug }) => slug === match.params.slug);
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    })
 
     return <>
     <BackButton />

@@ -1,4 +1,5 @@
 
+import { useEffect } from "react";
 import BackButton from "../../02-molecules/CallToAction/BackButton"
 import ProjectItemDetailHeader from "../../03-organisms/projectItemdetail/ProjectItemDetailHeader"
 import ProjectItemDetailImageDivider from "../../03-organisms/projectItemdetail/ProjectItemDetailImageDivider";
@@ -12,6 +13,10 @@ import { CreativeDeveloperProjects } from "../../data/skills/projects/dev-projec
 const FrontenDeveloperProject = ({match}) => {
 
     const Project = CreativeDeveloperProjects.find(({ slug }) => slug === match.params.slug);
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    })
 
     return <>
     <BackButton />

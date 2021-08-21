@@ -11,23 +11,23 @@ export const skills = [
     {
         SkillTitle : "UX/UI Designer",
         SkillQuote : "I understand the perfect user interface should look good and work even better.",
-        SkillIntro : "Projet mené à terme de ma formation UX/UI Design au CEPEGRA de Gosselies, Vitavi est l'application essentielle pour vos médicaments. Elles permet d'obtenir facilement les notices qui sont claires et simplifiées, et son système de rappel permet de ne jamais plus oublier ses médicaments ou ceux de vos proches.",
+        SkillIntro : "I'm concerned about how the product feels. By identifying verbal and non-verbal stumbling blocks, I refine and iterate to create the “best” user experience. When I'm designing user interfaces, I tend to put myself in the user’s shoes, anticipating what they expect at each stage. I then use this empathy to design visual, interactive elements that respond in a way that feels natural to the user.",
         SkillHeroImg : Parrot,
         SkillColor : colorsRoles.uiCol,
         SkillLightCtaLabel : false,
         SkillGradient : gradients.uiCol,
-        SkillCtaLabel : "Let's draw !",
+        SkillCtaLabel : "Let's draw!",
         SkillRouterPath : "/uxui-designer",
     },
     {
         SkillTitle : "Frontend developer",
         SkillQuote : "I understand the scope, requirements, and technical restraints of the project I am currently working on.",
-        SkillIntro : "This is the intro of Frontend developer",
+        SkillIntro : "I am highly-motivated, result oriented, self-driven, hard-working, fast learner and constantly seeking to improve my skills and am fully aware. In addition to this, I have the ability to adapt to any type of team environment, I am team oriented and get along with others when working in a group setting.",
         SkillHeroImg : Fox,
         SkillColor : colorsRoles.frontCol,
         SkillLightCtaLabel : true,
         SkillGradient : gradients.frontCol,
-        SkillCtaLabel : "Dacodac !",
+        SkillCtaLabel : "Let's code!",
         SkillRouterPath : "/frontend-developer",
     },
     {
@@ -61,33 +61,13 @@ export const uiuxClients = [
     },
     {
         ClientName : "Mazda",
-        ClientLogo : icons.Html5,
-        ClientAlt : "Mazda client"
-    },
-    {
-        ClientName : "Mazda",
         ClientLogo : icons.Mazda,
         ClientAlt : "Mazda client"
     },
     {
-        ClientName : "Mazda",
-        ClientLogo : icons.Mazda,
-        ClientAlt : "Mazda client"
-    },
-    {
-        ClientName : "Mazda",
-        ClientLogo : icons.Mazda,
-        ClientAlt : "Mazda client"
-    },
-    {
-        ClientName : "Mazda",
-        ClientLogo : icons.Mazda,
-        ClientAlt : "Mazda client"
-    },
-    {
-        ClientName : "Mazda",
-        ClientLogo : icons.Mazda,
-        ClientAlt : "Mazda client"
+        ClientName : "Telenet",
+        ClientLogo : icons.Telenet,
+        ClientAlt : "Telenet client"
     },
     
 ]
@@ -118,9 +98,9 @@ export const devClients = [
 
 export const photoClients = [
     {
-        ClientName : "Samsung",
-        ClientLogo : icons.Kia,
-        ClientAlt : "Samsung client"
+        ClientName : "Clavie",
+        ClientLogo : icons.Clavie,
+        ClientAlt : "Clavie client"
     },
     {
         ClientName : "Kia",
