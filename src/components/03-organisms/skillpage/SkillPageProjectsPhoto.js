@@ -18,21 +18,21 @@ grid-row-gap: 4rem;
 padding: 4rem ${gridSideMargins.xs};
 
 ${media.sm} {
-    padding: 4rem ${gridSideMargins.sm};
+    padding: 10rem ${gridSideMargins.sm};
     grid-template-columns: repeat(2,1fr);
     grid-column-gap: ${colSizes.sm};
     justify-items: center;
 }
 ${media.md} {
     width: calc(${gridFullWidth.md});
-    padding: 6rem 0;
+    padding: 11rem 0;
     margin: 0 auto;
     grid-gap: ${colSizes.md};
 }
 ${media.lg} {
     width: calc(${gridFullWidth.lg});
     grid-template-columns: repeat(3,1fr);
-    padding: 6rem 0;
+    padding: 14rem 0;
     grid-gap: ${colSizes.lg};
 }
 

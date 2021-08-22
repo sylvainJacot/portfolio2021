@@ -34,12 +34,12 @@ export const HeadingSecondaryStyled = styled(HeadingSecondaryStyle)`
     margin: 2rem auto;
 `
 
-const SkillPageMethodology = ({isUXUI,isDEV,isPHOTO,mainCol}) => {
+const SkillPageMethodology = ({isUXUI,isDEV,isPHOTO,mainTitle}) => {
 
     return <>
 
             <Wrapper>
-            <HeadingSecondaryStyled Positive={true}>Methodo</HeadingSecondaryStyled>
+            <HeadingSecondaryStyled Positive={true}>{mainTitle}</HeadingSecondaryStyled>
                 <MethodoIconsWrapper>
                         {
                             isUXUI && uiuxMethodo.map((item,index) => 

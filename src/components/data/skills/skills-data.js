@@ -33,7 +33,7 @@ export const skills = [
     {
         SkillTitle : "Photo retoucher",
         SkillQuote : "I understand that quality is not just about the retouching itself but also about the added value of service that you provide",
-        SkillIntro : "This is the intro of Photo retoucher",
+        SkillIntro : "A retoucher has to be able to appreciate the basic importance of how light falls; he needs a visual eye. Another key quality is when working with someone new, it’s always best to communicate your ideas and thoughts early on. The faster you get to know each other, the faster you'll start creating amazing things.",
         SkillHeroImg : Horse,
         SkillColor : colorsRoles.retouchCol,
         SkillLightCtaLabel : true,
@@ -165,9 +165,14 @@ export const uiuxMethodo = [
 
 export const devMethodo = [
     {
-        MethodoName: "Javascript",
-        MethodoLogo: icons.Javascript,
-        MethodoAlt: "Javascript"
+        MethodoName: "Html 5",
+        MethodoLogo: icons.Html5,
+        MethodoAlt: "Html 5"
+    },
+    {
+        MethodoName: "Sass",
+        MethodoLogo: icons.Sass,
+        MethodoAlt: "Sass"
     },
     {
         MethodoName: "Javascript",
@@ -175,9 +180,29 @@ export const devMethodo = [
         MethodoAlt: "Javascript"
     },
     {
-        MethodoName: "Javascript",
-        MethodoLogo: icons.Javascript,
-        MethodoAlt: "Javascript"
+        MethodoName: "Wordpress",
+        MethodoLogo: icons.Wordpress,
+        MethodoAlt: "Wordpress"
+    },
+    {
+        MethodoName: "React",
+        MethodoLogo: icons.React,
+        MethodoAlt: "React"
+    },
+    {
+        MethodoName: "Styled Components",
+        MethodoLogo: icons.StyledComponents,
+        MethodoAlt: "Styled Components"
+    },
+    {
+        MethodoName: "GitHub",
+        MethodoLogo: icons.Git,
+        MethodoAlt: "GitHub"
+    },
+    {
+        MethodoName: "Coffee Break",
+        MethodoLogo: icons.CoffeeBreak,
+        MethodoAlt: "Coffee Break"
     },
 ]
 

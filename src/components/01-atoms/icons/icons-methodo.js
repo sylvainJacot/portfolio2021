@@ -2,7 +2,7 @@ import SketchLogo from "../../assets/images/icones/methodology/Sketch.svg";
 import AtomicDesignLogo from "../../assets/images/icones/methodology/atomicdesign.svg";
 import RawSketchLogo from "../../assets/images/icones/methodology/rawSketch.svg";
 import InvisionLogo from "../../assets/images/icones/methodology/invision.svg";
-import StyledComponentsLogo from "../../assets/images/icones/methodology/styledcomponents.png";
+import StyledComponentsLogo from "../../assets/images/icones/methodology/styledcomponents.svg";
 import Html5Logo from "../../assets/images/icones/methodology/Html5.svg";
 import ReactLogo from "../../assets/images/icones/methodology/React.svg";
 import ZeplinLogo from "../../assets/images/icones/methodology/zeplin.svg";
@@ -24,6 +24,7 @@ import LightRoomLogo from "../../assets/images/icones/methodology/LightRoomClass
 import GraphicTabletLogo from "../../assets/images/icones/methodology/GraphicTablet.svg";
 import CrossBrowsersTestingLogo from "../../assets/images/icones/methodology/CrossBrowser.svg";
 import CodeSandBoxLogo from "../../assets/images/icones/methodology/code-sandbox.svg";
+import WordpressLogo from "../../assets/images/icones/methodology/wordpress-blue.svg";
 
 
 export const Sketch = {
@@ -156,5 +157,11 @@ export const CodeSandBox = {
     title: "CodeSandBox",
     altImage: "CodeSandBox logo",
     logo: CodeSandBoxLogo,
+}
+
+export const Wordpress = {
+    title: "Wordpress",
+    altImage: "Wordpress",
+    logo: WordpressLogo,
 }
 

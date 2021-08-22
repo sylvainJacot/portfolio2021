@@ -9,8 +9,8 @@ const UxUiDesigner = () => {
     return <>
             <SkillPageWrapper>
                 <SkillPageHeaderTemplate isUXUI />
-                <SkillPageClients isUXUI />
-                <SkillPageMethodology isUXUI />
+                {/* <SkillPageClients isUXUI /> */}
+                <SkillPageMethodology isUXUI mainTitle={"Main Tools"}/>
                 <SkillPageProjectsUxUi />
             </SkillPageWrapper>
     </>

@@ -9,8 +9,8 @@ const FrontenDeveloper = () => {
     return <>
         <SkillPageWrapper>
             <SkillPageHeaderTemplate isDEV />
-            <SkillPageClients isDEV />
-            <SkillPageMethodology isDEV />
+            {/* <SkillPageClients isDEV /> */}
+            <SkillPageMethodology isDEV  mainTitle={"Current Stack"}/>
             <SkillPageProjectsDev />
         </SkillPageWrapper>
     </>

@@ -69,7 +69,7 @@ export const HeaderWrapper = styled(GridWrapper)`
 `;
 
 export const Headerstyle = styled.header`
-    background-color: ${colorsRoles.LightGrey};
+    background-color: ${colorsRoles.White};
 `;
 
 const SkillPageHeaderTemplate  = ({isUXUI,isDEV,isPHOTO}) => {

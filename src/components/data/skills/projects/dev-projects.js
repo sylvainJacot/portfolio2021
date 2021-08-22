@@ -1,5 +1,5 @@
 import { colorsRoles, projectColors } from "../../../01-atoms/colors";
-import { Html5, Sass, Javascript, Sketch, Bootsrap, Git, CSS3 } from "../../../01-atoms/icons/icons-methodo";
+import { Html5, Sass, Javascript, Sketch, Bootsrap, Git, CSS3, Wordpress } from "../../../01-atoms/icons/icons-methodo";
 
 
 /*       ------- CLAVIE -------        */
@@ -20,6 +20,21 @@ import ParentrepriseThumbnailImg from "../../../assets/images/projects/dev-proje
 import ParentrepriseHeaderlImg from "../../../assets/images/projects/dev-projects/parentreprise/header-Parentreprise.png";
 import ParentrepriseDecoImg from "../../../assets/images/projects/dev-projects/parentreprise/Parentreprise-deco.png";
 import ParentrepriseFolio01Img from "../../../assets/images/projects/dev-projects/parentreprise/Parentreprise-folio.png";
+
+/*       ------- PALAIS -------        */
+import PalaisThumbnailImg from "../../../assets/images/projects/dev-projects/palais/thumbnail-Palais.png";
+import PalaisHeaderlImg from "../../../assets/images/projects/dev-projects/palais/header-palais.png";
+import PalaisDecoImg from "../../../assets/images/projects/dev-projects/palais/PalaisDecorative.jpg";
+import PalaisFolio01Img from "../../../assets/images/projects/dev-projects/palais/PalaisFolio01.png";
+import PalaisFolio02Img from "../../../assets/images/projects/dev-projects/palais/PalaisFolio02.png";
+
+/*       ------- Febecoop -------        */
+import FebecoopThumbnailImg from "../../../assets/images/projects/dev-projects/febecoop/thumbnail-Febecoop.png";
+import FebecoopHeaderlImg from "../../../assets/images/projects/dev-projects/febecoop/header-febecoop.png";
+import FebecoopDecoImg from "../../../assets/images/projects/dev-projects/febecoop/FebecoopDecorative.jpg";
+import FebecoopFolio01Img from "../../../assets/images/projects/dev-projects/febecoop/FebecoopFolio01.png";
+import FebecoopFolio02Img from "../../../assets/images/projects/dev-projects/febecoop/FebecoopFolio02.png";
+import FebecoopFolio03Img from "../../../assets/images/projects/dev-projects/febecoop/FebecoopFolio03.png";
 
 
 export const ClavieProject = {
@@ -44,8 +59,139 @@ export const ParentrepriseProject = {
     Folio01 : ParentrepriseFolio01Img,
 }
 
+export const PalaisProject = {
+    Thumbnail : PalaisThumbnailImg,
+    Header : PalaisHeaderlImg,
+    Decorative : PalaisDecoImg,
+    Folio01 : PalaisFolio01Img,
+    Folio02 : PalaisFolio02Img,
+}
+
+export const FebecoopProject = {
+    Thumbnail : FebecoopThumbnailImg,
+    Header : FebecoopHeaderlImg,
+    Decorative : FebecoopDecoImg,
+    Folio01 : FebecoopFolio01Img,
+    Folio02 : FebecoopFolio02Img,
+    Folio03 : FebecoopFolio03Img,
+}
+
 
 export const CreativeDeveloperProjects = [
+    {
+        title: "Palais",
+        skill: "Creative Developer",
+        fields: "Custom wordpress theme",
+        description: "Pa’lais exists because they felt there needed to be more yummy and planet-friendly food. So they made our creamy spreads and sauces entirely out of plants.",
+        madeWith: [
+            Wordpress,
+            Sass,
+            Javascript
+        ],
+        roles: [
+            {
+                titleRole: "Team",
+                descriptionRole:"2 people",
+            },
+            {
+                titleRole: "Role",
+                descriptionRole:"Wordpress theme development",
+            },
+            {
+                titleRole: "Website",
+                descriptionRole:"www.palais.bio",
+            },
+        ],
+        slug: "Palais",
+        headerImage: PalaisProject.Header,
+        decorativeimage: PalaisProject.Decorative,
+        mainColor: projectColors.Palais,
+        FieldTextColorVisible: projectColors.Palais,
+        thumbnailproject : PalaisProject.Thumbnail,
+        methodology: [
+            Sketch,
+            Html5,
+            Sass,
+            Javascript,
+            Bootsrap,
+            Git,
+        ],
+        images: [
+            {
+                srcDesktop: PalaisProject.Folio01,
+                srcMobile: PalaisProject.Folio01,
+                altImg: "Palais portfolio",
+                bgColor: colorsRoles.White,
+            },
+            {
+                srcDesktop: PalaisProject.Folio02,
+                srcMobile: PalaisProject.Folio02,
+                altImg: "Palais portfolio",
+                bgColor: colorsRoles.White,
+            },
+        ]
+
+    },
+    {
+        title: "Febecoop",
+        skill: "Creative Developer",
+        fields: "Custom wordpress theme",
+        description: "Febecoop is an intersectoral platform of companies and associations that share the desire to develop an economy respectful of man and his environment, focused on social utility and equity, through companies organized on the basis of values, ethics and cooperative principles.",
+        madeWith: [
+            Wordpress,
+            Sass,
+            Javascript
+        ],
+        roles: [
+            {
+                titleRole: "Team",
+                descriptionRole:"3 people",
+            },
+            {
+                titleRole: "Role",
+                descriptionRole:"Wordpress theme development",
+            },
+            {
+                titleRole: "Website",
+                descriptionRole:"WIP",
+            },
+        ],
+        slug: "Febecoop",
+        headerImage: FebecoopProject.Header,
+        decorativeimage: FebecoopProject.Decorative,
+        mainColor: projectColors.Febecoop,
+        FieldTextColorVisible: projectColors.Febecoop,
+        thumbnailproject : FebecoopProject.Thumbnail,
+        methodology: [
+            Sketch,
+            Html5,
+            Sass,
+            Javascript,
+            Bootsrap,
+            Git,
+        ],
+        images: [
+            {
+                srcDesktop: FebecoopProject.Folio01,
+                srcMobile: FebecoopProject.Folio01,
+                altImg: "Febecoop portfolio",
+                bgColor: colorsRoles.White,
+            },
+            {
+                srcDesktop: FebecoopProject.Folio02,
+                srcMobile: FebecoopProject.Folio02,
+                altImg: "Febecoop portfolio",
+                bgColor: colorsRoles.White,
+            },
+            {
+                srcDesktop: FebecoopProject.Folio03,
+                srcMobile: FebecoopProject.Folio03,
+                altImg: "Febecoop portfolio",
+                bgColor: colorsRoles.White,
+            },
+        ]
+
+    },
     {
         title: "Clavie",
         skill: "Creative Developer",

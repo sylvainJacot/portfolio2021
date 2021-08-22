@@ -21,7 +21,7 @@ import IcSketch from "../../assets/images/icones/methodology/Sketch.svg";
 import IcAtomicDesign from "../../assets/images/icones/methodology/atomicdesign.svg";
 import IcRawSketch from "../../assets/images/icones/methodology/rawSketch.svg";
 import IcInvision from "../../assets/images/icones/methodology/invision.svg";
-import IcStyledComponents from "../../assets/images/icones/methodology/styledcomponents.png";
+import IcStyledComponents from "../../assets/images/icones/methodology/styledcomponents.svg";
 import IcHtml5 from "../../assets/images/icones/methodology/Html5.svg";
 import IcReact from "../../assets/images/icones/methodology/React.svg";
 import IcZeplin from "../../assets/images/icones/methodology/zeplin.svg";
@@ -43,6 +43,8 @@ import IcLightroom from "../../assets/images/icones/methodology/LightRoomClassic
 import IcGraphicTablet from "../../assets/images/icones/methodology/GraphicTablet.svg";
 import IcCrossBrowsers from "../../assets/images/icones/methodology/CrossBrowser.svg";
 import IcCodeSandBoxe from "../../assets/images/icones/methodology/code-sandbox.svg";
+import IcWordpress from "../../assets/images/icones/methodology/wordpress-blue.svg";
+
 
 
 const icons = {
@@ -83,7 +85,8 @@ const icons = {
     CodeSandBoxe : IcCodeSandBoxe,
     Resume : IcResume,
     Email : IcEmail,
-    JsLogo : IcJsLogo
+    JsLogo : IcJsLogo,
+    Wordpress : IcWordpress,
 }
 
 export default icons;

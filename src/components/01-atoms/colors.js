@@ -115,4 +115,6 @@ export const projectColors = {
     Clavie : "#205aa4",
     SoSmart : "#e31742",
     Parentreprise : "#6c3d8e",
+    Palais : "#234386",
+    Febecoop : "#19005a",
 }
