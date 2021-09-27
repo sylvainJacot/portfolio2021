@@ -47,11 +47,12 @@ export const ContactPageCloseArea = styled.div`
 `;
 
 export const Wrapper = styled.div`
-  position: fixed;
+  position: absolute;
   display: flex;
     align-items: center;
   z-index: 12;
   right: 0px;
+  top: ${(props) => props.aboutPageHidden ? "0" : "80px"};
   background-color: ${colorsRoles.White};
   width: 100vw;
   height: 100vh;
@@ -65,9 +66,11 @@ export const Wrapper = styled.div`
   }
 
   ${media.md} {
+    position: fixed;
     width: ${(props) => (props.aboutPageHidden ? "0" : "50%")};
     /* box-shadow:  20px 0px 50px 20px ${colorsRoles.DarkGrey}; */
     height: 100vh;
+    top: unset;
     transform: unset;
     right: 5.5rem;
     transform-origin: right center;

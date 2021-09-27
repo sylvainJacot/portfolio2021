@@ -62,20 +62,20 @@ const BackButton = () => {
 
     let History = useHistory();
     const refButton = useRef();
-    const [backButtonVisible, setBackButtonVisible] = useState(false);
+    const [backButtonVisible, setBackButtonVisible] = useState(true);
 
     const handleScroll = () => {
         let MediaQuery = window.matchMedia("(min-width: 1025px)");
         let currentScroll = window.pageYOffset;
 
         if (MediaQuery.matches) {
-            if(currentScroll >= 600) {
+            if(currentScroll >= 800) {
                 window.requestAnimationFrame(() => {
-                    setBackButtonVisible(true);
+                    setBackButtonVisible(false);
                 });
             } else {
                 window.requestAnimationFrame(() => {
-                    setBackButtonVisible(false);
+                    setBackButtonVisible(true);
                 });
             }
         }
@@ -86,13 +86,13 @@ const BackButton = () => {
         window.scrollTo(0, 0);
     }
 
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
+    // useEffect(() => {
+    //     window.addEventListener('scroll', handleScroll);
 
-        return () => {
-            window.removeEventListener('scroll',handleScroll);
-        }
-    })
+    //     return () => {
+    //         window.removeEventListener('scroll',handleScroll);
+    //     }
+    // })
 
     return <>
         <BackButtonWrapper

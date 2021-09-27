@@ -83,21 +83,21 @@ height: 100%;
 
 & ${BackGroundPic} {
 position: absolute;
-top: 70%;
+top: 11rem;
 right: 50%;
 transform: translate(50%,50%);
 
 ${media.sm}{
-top:60%;
+  top: 4rem;
 }
 
 ${media.md}{
-top: 62%;
+top: 50%;
 right: 58%;
 transform: translate(50%,-50%);
 }
 ${media.lg}{
-  top: 70%;
+  top: 50%;
 right: 60%;
 }
 
@@ -123,21 +123,21 @@ right: 60%;
 & ${ForeGroundPic} {
     position: absolute;
     left: -24px;
-    top: 160%;
+    top: 27rem;
     transform: translate(50%,-50%);
     
     
      ${media.sm}{
     left: 0;
-    top: 160%;
+    top: 24rem;
     }
     
     ${media.md}{
      left: -32%;
-     top: 70%;
+     top: 34rem;
     }
     ${media.lg}{
-     top: 90%;
+      top: 31rem;
     }
     
       & img {
@@ -187,15 +187,15 @@ const SkillPageProjectUxUiItem = ({fields, title, description,slug, ...props}) =
 
                 <RightSide bgColor={props.bgColor}>  
                     <BackGroundPic>
-                        <Parallax speed={2} percentage={0}>
+                        {/* <Parallax speed={1.3} percentage={0}> */}
                             <ResponsiveImage srcMobile={props.backgroundpicture} />
-                        </Parallax>
+                        {/* </Parallax> */}
                     </BackGroundPic>
 
                     <ForeGroundPic>
-                        <Parallax speed={8} percentage={0}>
+                        {/* <Parallax speed={-0.9} percentage={0}> */}
                             <ResponsiveImage srcMobile={props.foregroundpicture} />
-                        </Parallax>
+                        {/* </Parallax> */}
                     </ForeGroundPic>
                 </RightSide>
             </Box>

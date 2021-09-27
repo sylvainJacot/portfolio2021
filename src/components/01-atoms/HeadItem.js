@@ -9,7 +9,7 @@ const HeadItem = () => {
                 <title>{MetaData.MetaTitle}</title>
                 <meta name="description" content={MetaData.MetaDescription} ></meta>
                 <meta name="keywords" content={MetaData.MetaKeywords} ></meta>
-                <meta name="author" content={MetaData.MetaAuthor} ></meta>
+                <meta name="author" content="Jacot Sylvain" ></meta>
         </Helmet>
     </>
     )

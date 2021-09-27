@@ -2,7 +2,7 @@ import { createContext, useState } from "react";
 
 // Inspired from : https://codesandbox.io/s/typescript-react-usecontext-example-ufwux?file=/src/Context.js:38-46
 
-export const initialGlobalValues: IGlobalContext = {
+export const initialGlobalValues = {
   navBarSize: 0,
   setNavBarSize: () => {},
   aboutPageHidden: false,

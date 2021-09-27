@@ -74,7 +74,7 @@ export const Wrapper = styled.li`
   position: relative;
   overflow: hidden;
   width: 100vw;
-  padding: 4rem 2rem;
+  padding: 6rem 2rem;
   background-color: ${colorsRoles.DarkGrey};
   display: flex;
   justify-content: flex-end;

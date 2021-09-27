@@ -9,7 +9,7 @@ export const Heading = styled.h1`
   color: ${colorsRoles.White};
   letter-spacing: 0.1rem;
   font-size: 1.5rem;
-  line-height: 1.5rem;
+  line-height: 150%;
 
   &:after {
     position: absolute;
